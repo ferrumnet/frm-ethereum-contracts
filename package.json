@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "Ferrum Network Ethereum Contracts",
   "main": "truffle.js",
-  "directories": {
-  },
-  "scripts": {
-  },
+  "directories": {},
+  "scripts": {},
   "author": "Naiem Yeganeh",
   "license": "MIT",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "ganache-cli": "^6.5.1",
+    "mocha": "^6.2.0",
     "openzeppelin-solidity": "^2.3.0",
-    "truffle-hdwallet-provider": "^1.0.15"
+    "truffle": "^5.0.31",
+    "truffle-hdwallet-provider": "^1.0.15",
+    "web3": "^1.2.1"
   }
 }
