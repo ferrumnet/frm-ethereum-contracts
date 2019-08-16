@@ -65,7 +65,7 @@ contract Festaking {
     }
 
     function addReward(uint256 rewardAmount, uint256 withdrawableAmount)
-    public
+    public 
     _before(withdrawStarts)
     returns (bool) {
         require(rewardAmount > 0, "Festaking: reward must be positive");
