@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import getWeb3 from "../utils/getWeb3";
 import FestakingContract from "../utils/festaking.json";
 import StakeForm from '../components/StakeForm';
+const abiDecoder = require('abi-decoder');
 
 class Stake extends Component {
     
@@ -53,18 +54,25 @@ class Stake extends Component {
         const stake = await contract.methods.stake(stakeAmount)
         .send({from:owner, gas:500000});
 
-        contract.events.Staked({
-            fromBlock: 0
-        }, function(error, event){ console.log(event); })
-        .on('data', function(event){
-            console.log(event); 
-        })
-        .on('changed', function(event){
-            console.log(event); 
-        })
-        .on('error', function(event){
-            console.error(event); 
-        });
+        // var txtHash = '"' + stake.blockHash + '"';
+
+        // console.log("---->", stake);
+
+        // console.log("---->", txtHash);
+
+  
+
+        // abiDecoder.addABI(FestakingContract.abi);
+        // Web3.eth.getTransactionReceipt(txtHash, function(e, receipt) {
+        //     const decodedLogs = abiDecoder.decodeLogs(receipt.logs);
+        //     console.log("Logs------", decodedLogs);
+        // });
+
+
+        contract.events.Evt({fromBlock: 0, toBlock: 'latest'},function () {
+        }).on('data',function (evt) {
+                console.log("evt",evt);
+            });
 
 
         if(stake){

@@ -6,7 +6,7 @@ const StakeForm = ({handleChange, handleSubmit, amount}) => (
     <div className="card-body">
     <form onSubmit={handleSubmit}>
       <div className="form-group">
-        <label for="Withdraw">Stake Amount</label>
+        <label>Stake Amount</label>
         <input
           name="amount"
           type="number"

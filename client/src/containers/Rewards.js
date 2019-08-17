@@ -3,6 +3,7 @@ import getWeb3 from "../utils/getWeb3";
 import FestakingContract from "../utils/festaking.json";
 import AddRewardForm from '../components/AddRewardForm';
 
+
 class AddReward extends Component{
 
     state = {
@@ -55,6 +56,7 @@ class AddReward extends Component{
         .send({from:owner, 
             gas:500000
             });
+
 
 
         if(addReward){
