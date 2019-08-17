@@ -2,14 +2,14 @@ import React from 'react';
 
 const AddRewardForm = ({ handleChange, handleSubmit, state }) => (
   <div className="container col-sm-4 col-offset-3">
-      <div class="card">
-    <div class="card-body">
+      <div className="card">
+    <div className="card-body">
     <form onSubmit={handleSubmit}>
-      <div class="form-group">
-        <label for="Amount">Reward Amount</label>
+      <div className="form-group">
+        <label >Reward Amount</label>
         <input
           type="number"
-          class="form-control"
+          className="form-control"
           name="amount"
           aria-describedby="emailHelp"
           placeholder="Enter email"
@@ -17,18 +17,18 @@ const AddRewardForm = ({ handleChange, handleSubmit, state }) => (
           value={state.amount}
         />
       </div>
-      <div class="form-group">
-        <label for="Withdraw">Withdraw Amount</label>
+      <div className="form-group">
+        <label >Withdraw Amount</label>
         <input
           type="number"
-          class="form-control"
+          className="form-control"
           name="withdrawable"
           placeholder="Password"
           onChange={handleChange}
           value={state.withdrawable}
         />
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" className="btn btn-primary">
         Add Reward
       </button>
     </form>

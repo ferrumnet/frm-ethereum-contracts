@@ -6,27 +6,31 @@ import AddRewardForm from '../components/AddRewardForm';
 class AddReward extends Component{
 
     state = {
-        web3: null,
         contract: null,
         amount: 0,
         withdrawable: 0
     };
 
+    web3 = undefined
+
+    
+
     async componentDidMount(){
         try {
-            const web3 = await getWeb3();
-            const accounts = await web3.eth.getAccounts();
+            this.web3 = await getWeb3();
+
+            const accounts = await this.web3.eth.getAccounts();
             const owner = accounts[0];
 
-            const networkId = await web3.eth.net.getId();
+            const networkId = await this.web3.eth.net.getId();
             const deployedNetwork = FestakingContract.networks[networkId];
             
-            const instance = new web3.eth.Contract(
+            const instance = new this.web3.eth.Contract(
                 FestakingContract.abi,
                 deployedNetwork && deployedNetwork.address,
             );
 
-            this.setState({ web3, owner, contract: instance });
+            this.setState({ owner, contract: instance });
         } catch (error) {
             alert(
               `Failed to load web3, accounts, or contract. Check console for details.`,
@@ -43,12 +47,14 @@ class AddReward extends Component{
     handleSubmit = async (event) => {
         event.preventDefault();
         const { amount, withdrawable, contract, owner} = this.state;
-        var Web3 = require('web3');
-        const rewardAmount = Web3.utils.toWei(amount, 'ether')
-        const withdrawAmount = Web3.utils.toWei(withdrawable,'ether')
+        const rewardAmount = this.web3.utils.toWei(amount, 'ether')
+        const withdrawAmount = this.web3.utils.toWei(withdrawable,'ether')
+
         
         const addReward = await contract.methods.addReward(rewardAmount,withdrawAmount)
-        .send({from:owner, gas:500000});
+        .send({from:owner, 
+            gas:500000
+            });
 
 
         if(addReward){

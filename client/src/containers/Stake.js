@@ -53,6 +53,19 @@ class Stake extends Component {
         const stake = await contract.methods.stake(stakeAmount)
         .send({from:owner, gas:500000});
 
+        contract.events.Staked({
+            fromBlock: 0
+        }, function(error, event){ console.log(event); })
+        .on('data', function(event){
+            console.log(event); 
+        })
+        .on('changed', function(event){
+            console.log(event); 
+        })
+        .on('error', function(event){
+            console.error(event); 
+        });
+
 
         if(stake){
             console.log('reward added');
