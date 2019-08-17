@@ -1,3 +1,4 @@
+pragma solidity ^0.5.8;
 import "./Festaking.sol";
 
 contract FestakingTest is Festaking {
