@@ -1,0 +1,33 @@
+.min-component-height {
+  min-height: 74vh;
+}
+
+.top-padding {
+  padding-top: 5rem;
+}
+.remove-borders {
+  border-radius: 0 !important;
+}
+
+.step-progress {
+  display: flex;
+  justify-content: space-between;
+}
+
+.two-inline-buttons {
+  display: table;
+  margin: 0 auto;
+}
+
+.two-inline-buttons button {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+@media only screen and (max-width: 960px) {
+  .three-inline-buttons button {
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+  }
+}

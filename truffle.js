@@ -19,7 +19,7 @@ module.exports = {
       provider: function() {
         return new HDWalletProvider(mnemonic, rinkebyClientUrl);},
       network_id: 4,
-      gas: 4612388 // Gas limit used for deploys
+      gas: 4712388 // Gas limit used for deploys
     },
   }
 };

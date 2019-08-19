@@ -214,12 +214,12 @@ contract Festaking {
     }
 
     modifier _after(uint eventTime) {
-        require(now >= eventTime, "Festaking: bad timing for the request");
+        require(now >= eventTime, "Festaking: bad timing for the request 1");
         _;
     }
 
     modifier _before(uint eventTime) {
-        require(now < eventTime, "Festaking: bad timing for the request");
+        require(now < eventTime, "Festaking: bad timing for the request 2");
         _;
     }
 }
