@@ -4,6 +4,9 @@ var mnemonic = process.env.NMONIC;
 var rinkebyClientUrl = process.env.RINKEBY_CLIENT_URL
 
 module.exports = {
+
+  plugins: ["truffle-security"],
+
   // See <http://truffleframework.com/docs/advanced/configuration>
   // for more about customizing your Truffle configuration!
   networks: {

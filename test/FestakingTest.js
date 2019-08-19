@@ -5,6 +5,8 @@ const Web3 = require('web3');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
 const festakingJson = require('../build/contracts/FestakingTest.json');
 const frmJson = require('../build/contracts/FerrumToken.json');
+const abiDecoder = require('abi-decoder');
+
 const STAKING_CAP = 1000;
 const GAS ='5000000';
 
@@ -35,6 +37,7 @@ beforeEach(async () => {
     // Approve the owner
     await frm.methods.approve(contractAddress, STAKING_CAP).send({from: owner});
     const allowance = await frm.methods.allowance(owner, contractAddress).call();
+    abiDecoder.addABI(festakingJson['abi']);
     console.log('Owner allowance is', allowance.toString());
 });
 
@@ -80,7 +83,8 @@ async function debugVars() {
 async function setUpStakes() {
     await addReward();
     await allow(ac1, 200);
-    await festaking.methods.stake(100).send({from: ac1, gas: GAS});
+    const tx = await festaking.methods.stake(100).send({from: ac1, gas: GAS});
+    await getTransactionLogs(tx.transactionHash);
     let stake = await festaking.methods.stakeOf(ac1).call();
     console.log('Staked ', stake.toString());
 
@@ -94,6 +98,17 @@ async function setUpStakes() {
     console.log('Staked ', stake.toString());
     const allowance = await frm.methods.allowance(ac2, contractAddress).call();
     console.log('Allowance after stake overflow ', allowance.toString());
+}
+
+async function getTransactionLogs(txId) {
+    const receipts = await web3.eth.getTransactionReceipt(txId);
+    const decodedLogs = abiDecoder.decodeLogs(receipts.logs);
+    decodedLogs.forEach(l => {
+        if (l) {
+            console.log(JSON.stringify(l));
+        }
+    })
+    return decodedLogs.filter(Boolean);
 }
 
 describe('Happy Festaking', () => {
@@ -125,7 +140,8 @@ describe('Happy Festaking', () => {
         console.log(await balance(ac2));
 
         // Withdraw at the first moment
-        await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
+        const tx = await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
+        await getTransactionLogs(tx.transactionHash);
         let after = await vars();
         console.log('AFTER', after);
         let bal = await balance(ac2);
