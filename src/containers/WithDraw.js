@@ -1,36 +1,54 @@
 import React, { Component } from "react";
-import { WithdrawStepper, WithdrawCard } from "../components/WithdrawForm";
+import {
+  WithdrawStepper,
+  WithdrawCard,
+  Loader
+} from "../components/WithdrawForm";
 import { connect } from "react-redux";
-import { addContractData } from "../redux/actions/addReward";
+import { deployContractAction } from "../redux/actions/deploy";
 import { errorToast, successToast } from "../utils/toasts";
 
 class WithDraw extends Component {
   state = {
     amount: 0,
-    step: 1
+    step: 1,
+    loading: false,
+    complete: false
   };
 
   nextStep = () => {
     const { step } = this.state;
     this.setState({
-      step: step + 1
+      step: step + 1,
+      loading: false,
+      complete: false
     });
   };
 
   resetStep = () => {
     this.setState({
       amount: 0,
-      step: 1
+      step: 1,
+      loading: false,
+      complete: false
     });
+  };
+
+  setLoading = () => {
+    this.setState({ loading: true, complete: false });
+  };
+
+  stopLoading = () => {
+    this.setState({ loading: false });
   };
 
   async componentDidMount() {
     const {
-      addContractDataFunc,
+      deployContractAction,
       contract: { data }
     } = this.props;
     if (!data) {
-      await addContractDataFunc();
+      await deployContractAction();
     }
     await this.balance();
     await this.vars();
@@ -82,6 +100,7 @@ class WithDraw extends Component {
   };
 
   validateWithdraw = async event => {
+    this.setLoading();
     event.preventDefault();
     const {
       contract: {
@@ -91,17 +110,22 @@ class WithDraw extends Component {
     const { amount } = this.state;
 
     if (amount <= 0) {
+      this.stopLoading();
       errorToast("Please enter a value above zero");
       return;
     }
 
     const balanceAmount = await festaking.methods.stakeOf(ac1).call();
-    return parseInt(balanceAmount) < parseInt(amount)
-      ? errorToast("You don't have enough money")
-      : this.nextStep();
+    if (parseInt(balanceAmount) < parseInt(amount)) {
+      this.stopLoading();
+      errorToast("You don't have enough money");
+      return;
+    }
+    this.nextStep();
   };
 
   authorizeWithdraw = async event => {
+    this.setLoading();
     event.preventDefault();
     const {
       contract: {
@@ -118,11 +142,13 @@ class WithDraw extends Component {
       this.nextStep();
     } catch (error) {
       errorToast("Unable to withdrawal, try again");
+      this.stopLoading();
       this.resetStep();
     }
   };
 
   handleSubmit = async event => {
+    this.setLoading();
     event.preventDefault();
     const {
       contract: {
@@ -137,9 +163,11 @@ class WithDraw extends Component {
       const balanceAmount = await festaking.methods.stakeOf(ac1).call();
       this.setState({ totalReward: balanceAmount });
       successToast("Successfully withdrew");
-      this.resetStep();
+      this.setState({ complete: true });
+      setTimeout(() => this.resetStep(), 4000);
     } catch (e) {
       errorToast("Error withdrawing");
+      this.stopLoading();
       this.resetStep();
     }
 
@@ -147,7 +175,15 @@ class WithDraw extends Component {
   };
 
   render() {
-    const { amount, balance, stakedBalance, stakedTotal, step } = this.state;
+    const {
+      amount,
+      balance,
+      stakedBalance,
+      stakedTotal,
+      step,
+      loading,
+      complete
+    } = this.state;
     return (
       <div className="container col-sm-10 col-offset-3">
         <div className="row">
@@ -158,16 +194,20 @@ class WithDraw extends Component {
           />
           <div className="col-sm-2"></div>
           <div className="col-sm-5">
-            <WithdrawStepper
-              amount={amount}
-              step={step}
-              validateWithdraw={this.validateWithdraw}
-              handleSubmit={this.handleSubmit}
-              handleChange={this.handleChange}
-              authorizeWithdraw={this.authorizeWithdraw}
-              nextStep={this.nextStep}
-              prevStep={this.resetStep}
-            />
+            {loading ? (
+              <Loader complete={complete} />
+            ) : (
+              <WithdrawStepper
+                amount={amount}
+                step={step}
+                validateWithdraw={this.validateWithdraw}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                authorizeWithdraw={this.authorizeWithdraw}
+                nextStep={this.nextStep}
+                prevStep={this.resetStep}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -180,7 +220,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  addContractDataFunc: addContractData
+  deployContractAction: deployContractAction
 };
 
 export default connect(

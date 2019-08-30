@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import AddRewardForm from "../components/AddRewardForm";
-import { addContractData } from "../redux/actions/addReward";
+import { deployContractAction } from "../redux/actions/deploy";
 import { errorToast, successToast } from "../utils/toasts";
 
 class AddReward extends Component {
   state = {
     amount: 0,
-    withdrawable: 0
+    withdrawable: 0,
+    loading: false
   };
 
   async componentDidMount() {
     const {
-      addContractDataFunc,
+      deployContractAction,
       contract: { data }
     } = this.props;
     if (!data) {
-      await addContractDataFunc();
+      await deployContractAction();
     }
   }
 
@@ -34,9 +35,6 @@ class AddReward extends Component {
       }
     } = this.props;
 
-    // const allowance = await frm.methods.allowance(owner, contractAddress).call();
-    // console.log("Owner allowance is", allowance.toString());
-
     if (parseInt(amount) <= 0 || parseInt(withdrawable) <= 0) {
       errorToast("Please enter values above zero");
       return;
@@ -47,19 +45,17 @@ class AddReward extends Component {
       );
       return;
     }
-    const totalReward = await festaking.methods.totalReward().call();
-    console.log("total reward", totalReward);
 
-    const addReward = await festaking.methods
-      .addReward(amount, withdrawable)
-      .send({ from: owner, gas: GAS });
-
-    if (addReward) {
-      const totalReward2 = await festaking.methods.totalReward().call();
-      console.log("total reward", totalReward2);
+    try {
+      this.setState({ loading: true });
+      await festaking.methods
+        .addReward(amount, withdrawable)
+        .send({ from: owner, gas: GAS });
       successToast("Reward Added Successfully");
-    } else {
+      this.setState({ loading: false });
+    } catch (error) {
       errorToast("Error adding a Reward");
+      this.setState({ loading: false });
     }
   };
 
@@ -81,7 +77,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  addContractDataFunc: addContractData
+  deployContractAction: deployContractAction
 };
 
 export default connect(

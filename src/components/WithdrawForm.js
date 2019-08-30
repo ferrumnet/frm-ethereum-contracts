@@ -76,6 +76,16 @@ export const SubmitWithdrawal = ({ handleSubmit, prevStep, amount }) => (
   </div>
 );
 
+export const Loader = ({ complete }) => (
+  <div className="min-component-height top-padding">
+    <div className="card custom-loader">
+      <div className={`circle-loader ${complete && "load-complete"}`}>
+        <div className={`${complete && "checkmark draw"}`}></div>
+      </div>
+    </div>
+  </div>
+);
+
 export const ConfirmForm = ({ prevStep, authorizeWithdraw, amount }) => (
   <div className="card">
     <div className="card-body two-inline-buttons">

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => (
-  <div className="card text-white text-center bg-dark remove-borders">
+  <div className="card text-white text-center bg-dark remove-borders footer">
     <div className="card-body">
       <h5 className="card-title">Ferrum Contracts</h5>
     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { StakeCard, StakeStepper, Loader } from "../components/StakeForm";
-import { addContractData } from "../redux/actions/addReward";
+import { deployContractAction } from "../redux/actions/deploy";
 import { errorToast, successToast } from "../utils/toasts";
 
 class Stake extends Component {
@@ -36,11 +36,11 @@ class Stake extends Component {
 
   async componentDidMount() {
     const {
-      addContractDataFunc,
+      deployContractAction,
       contract: { data }
     } = this.props;
     if (!data) {
-      await addContractDataFunc();
+      await deployContractAction();
     }
     await this.vars();
   }
@@ -96,8 +96,8 @@ class Stake extends Component {
     }
     const rewardBalance = await this.call("rewardBalance");
     if (rewardBalance <= 0) {
-      errorToast("Can't stake, reward hasn't been set yet");
       this.stopLoading();
+      errorToast("Can't stake, reward hasn't been set yet");
       return;
     }
     this.nextStep();
@@ -200,7 +200,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  addContractDataFunc: addContractData
+  deployContractAction: deployContractAction
 };
 
 export default connect(

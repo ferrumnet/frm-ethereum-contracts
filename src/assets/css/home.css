@@ -31,3 +31,10 @@
     text-align: center;
   }
 }
+
+.footer {
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* top: 85vh; */
+  /* width: 100%; */
+}

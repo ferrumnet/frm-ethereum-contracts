@@ -1,7 +1,7 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
 
 var mnemonic = process.env.NMONIC;
-var rinkebyClientUrl = process.env.RINKEBY_CLIENT_URL
+var rinkebyClientUrl = process.env.RINKEBY_CLIENT_URL;
 
 module.exports = {
 
@@ -17,9 +17,10 @@ module.exports = {
     },
     rinkeby: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, rinkebyClientUrl);},
+        return new HDWalletProvider(mnemonic, rinkebyClientUrl);
+      },
       network_id: 4,
       gas: 4712388 // Gas limit used for deploys
-    },
+    }
   }
 };

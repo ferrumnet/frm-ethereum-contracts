@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddRewardForm = ({ handleChange, handleSubmit, state }) => (
+const AddRewardForm = ({ handleChange, handleSubmit, state, loading }) => (
   <div className="container col-sm-4 col-offset-3">
     <div className="card">
       <div className="card-body">
@@ -28,8 +28,23 @@ const AddRewardForm = ({ handleChange, handleSubmit, state }) => (
               value={state.withdrawable}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Add Reward
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={state.loading}
+          >
+            {state.loading ? (
+              <>
+                <span
+                  className="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>{" "}
+                Loading...
+              </>
+            ) : (
+              "Add Reward"
+            )}
           </button>
         </form>
       </div>

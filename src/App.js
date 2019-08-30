@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import AddReward from "./containers/Rewards";
 import WithDraw from "./containers/WithDraw";
 import Stake from "./containers/Stake";
+import Deploy from "./containers/Deploy";
 import { NotFound } from "./components/NotFound";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -28,6 +29,7 @@ class App extends Component {
           <Route exact path="/" component={AddReward} />
           <Route exact path="/withdraw" component={WithDraw} />
           <Route exact path="/stake" component={Stake} />
+          <Route exact path="/deploy" component={Deploy} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

@@ -54,6 +54,16 @@ const Header = () => {
                 Withdraw
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                exact
+                to="/deploy"
+                activeStyle={activeStyle}
+              >
+                Deploy
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
