@@ -1,25 +1,43 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import AddRewardForm from "../components/AddRewardForm";
-import { deployContractAction } from "../redux/actions/deploy";
-import { errorToast, successToast } from "../utils/toasts";
+import { addReward } from "../redux/actions/addReward";
+import { errorToast } from "../utils/toasts";
+import { connectContractAction } from "../redux/actions/deploy";
+import { vars } from "../redux/actions/stake";
 
-class AddReward extends Component {
-  state = {
-    amount: 0,
-    withdrawable: 0,
-    loading: false
-  };
+export class AddReward extends Component {
+  state = { amount: 0, withdrawable: 0, disable: false };
 
   async componentDidMount() {
     const {
-      deployContractAction,
-      contract: { data }
+      connectContractAction,
+      contract: { data },
+      match: {
+        params: { address }
+      }
     } = this.props;
     if (!data) {
-      await deployContractAction();
+      await connectContractAction(address);
     }
+    const {
+      contract: { error }
+    } = this.props;
+    !error && this.disableButton();
   }
+
+  disableButton = async () => {
+    const {
+      stake: {
+        variables: { deployedStakingStart }
+      }
+    } = this.props;
+    const currentDate = new Date();
+    const now = currentDate.getTime();
+
+   (now > deployedStakingStart*1000) &&
+      this.setState({ disable: true });
+  };
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -30,9 +48,8 @@ class AddReward extends Component {
     event.preventDefault();
     const { amount, withdrawable } = this.state;
     const {
-      contract: {
-        data: { owner, festaking, GAS }
-      }
+      contract: { data },
+      addReward
     } = this.props;
 
     if (parseInt(amount) <= 0 || parseInt(withdrawable) <= 0) {
@@ -46,38 +63,40 @@ class AddReward extends Component {
       return;
     }
 
-    try {
-      this.setState({ loading: true });
-      await festaking.methods
-        .addReward(amount, withdrawable)
-        .send({ from: owner, gas: GAS });
-      successToast("Reward Added Successfully");
-      this.setState({ loading: false });
-    } catch (error) {
-      errorToast("Error adding a Reward");
-      this.setState({ loading: false });
-    }
+    await addReward(amount, withdrawable, data);
+    this.setState({ amount: 0, withdrawable: 0 });
   };
 
   render() {
+    const {
+      reward: { loading }
+    } = this.props;
+    const { disable } = this.state;
+
     return (
       <div className="min-component-height top-padding">
         <AddRewardForm
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           state={this.state}
+          loading={loading}
+          disable={disable}
         />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  contract: state.contract
+const mapStateToProps = ({ contract, reward, stake }) => ({
+  contract,
+  reward,
+  stake
 });
 
 const mapDispatchToProps = {
-  deployContractAction: deployContractAction
+  connectContractAction: connectContractAction,
+  addReward,
+  varsFunc: vars
 };
 
 export default connect(

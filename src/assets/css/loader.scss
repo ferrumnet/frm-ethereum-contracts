@@ -86,3 +86,22 @@ $check-color: $brand-success;
     opacity: 1;
   }
 }
+$primary: black;
+.ui-loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1500;
+  opacity: 0.4;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    fill: $primary;
+    height: 6rem;
+    width: 6rem;
+  }
+}

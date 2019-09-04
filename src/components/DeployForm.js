@@ -10,14 +10,12 @@ const DeployForm = ({
   handleSubmit,
   loading
 }) => (
-  <div className="col-sm-7 top-padding">
+  <div className="col-sm-8 offset-sm-2 top-padding" >
     <div className="card">
       <div className="card-body">
         <form onSubmit={handleSubmit}>
           <div className="form-group row col-sm-12">
-            <label for="cap" className="col-sm-4">
-              Staking Cap
-            </label>
+            <label className="col-sm-4">Staking Cap</label>
             <input
               type="number"
               id="stakingCap"
@@ -28,9 +26,7 @@ const DeployForm = ({
             />
           </div>
           <div className="form-group row col-sm-12">
-            <label for="stakingStart" className="col-sm-4">
-              Staking Start Date
-            </label>
+            <label className="col-sm-4">Staking Start Date</label>
             <input
               type="date"
               id="stakingStart"
@@ -42,9 +38,7 @@ const DeployForm = ({
             />
           </div>
           <div className="form-group row col-sm-12">
-            <label for="stakingEnd" className="col-sm-4">
-              Staking End Date
-            </label>
+            <label className="col-sm-4">Staking End Date</label>
             <input
               type="date"
               id="stakingEnd"
@@ -55,10 +49,8 @@ const DeployForm = ({
               required
             />
           </div>
-          <div class="form-group row col-sm-12">
-            <label for="withdrawStart" className="col-sm-4">
-              withdraw Start Date
-            </label>
+          <div className="form-group row col-sm-12">
+            <label className="col-sm-4">withdraw Start Date</label>
             <input
               type="date"
               id="withdrawStart"
@@ -69,10 +61,8 @@ const DeployForm = ({
               required
             />
           </div>
-          <div class="form-group row col-sm-12">
-            <label for="withdrawEnd" className="col-sm-4">
-              withdraw End Date
-            </label>
+          <div className="form-group row col-sm-12">
+            <label className="col-sm-4">withdraw End Date</label>
             <input
               type="date"
               id="withdrawEnd"
@@ -83,7 +73,7 @@ const DeployForm = ({
               required
             />
           </div>
-          <div class="form-group text-center">
+          <div className="form-group text-center">
             <button
               type="submit"
               className="btn btn-md col-sm-4  form-control btn-primary"

@@ -1,0 +1,3399 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test DeployForm Component It should match the snapshot when loading is false 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DeployForm
+    handleChange={[MockFunction]}
+    handleSubmit={[MockFunction]}
+    loading={false}
+    stakingCap={0}
+    stakingEnd=""
+    stakingStart=""
+    withdrawEnd=""
+    withdrawStart=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card"
+      >
+        <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Cap
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingCap"
+                name="stakingCap"
+                onChange={[MockFunction]}
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingStart"
+                name="stakingStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingEnd"
+                name="stakingEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawStart"
+                name="withdrawStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawEnd"
+                name="withdrawEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group text-center"
+            >
+              <button
+                className="btn btn-md col-sm-4  form-control btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Deploy Contract
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
+      "className": "col-sm-7 top-padding",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Cap
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingCap"
+                name="stakingCap"
+                onChange={[MockFunction]}
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingStart"
+                name="stakingStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingEnd"
+                name="stakingEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawStart"
+                name="withdrawStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawEnd"
+                name="withdrawEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group text-center"
+            >
+              <button
+                className="btn btn-md col-sm-4  form-control btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Deploy Contract
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Cap
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingCap"
+                name="stakingCap"
+                onChange={[MockFunction]}
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingStart"
+                name="stakingStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingEnd"
+                name="stakingEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawStart"
+                name="withdrawStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawEnd"
+                name="withdrawEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group text-center"
+            >
+              <button
+                className="btn btn-md col-sm-4  form-control btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Deploy Contract
+              </button>
+            </div>
+          </form>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Deploy Contract
+                </button>
+              </div>,
+            ],
+            "onSubmit": [MockFunction],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Cap
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingCap"
+                    name="stakingCap"
+                    onChange={[MockFunction]}
+                    type="number"
+                    value={0}
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking Cap",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "Staking Cap",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "stakingCap",
+                    "name": "stakingCap",
+                    "onChange": [MockFunction],
+                    "type": "number",
+                    "value": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Start Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingStart"
+                    name="stakingStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking Start Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "Staking Start Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "stakingStart",
+                    "name": "stakingStart",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking End Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingEnd"
+                    name="stakingEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking End Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "Staking End Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "stakingEnd",
+                    "name": "stakingEnd",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw Start Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawStart"
+                    name="withdrawStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "withdraw Start Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "withdraw Start Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "withdrawStart",
+                    "name": "withdrawStart",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw End Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawEnd"
+                    name="withdrawEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "withdraw End Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "withdraw End Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "withdrawEnd",
+                    "name": "withdrawEnd",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Deploy Contract
+                </button>,
+                "className": "form-group text-center",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Deploy Contract",
+                  "className": "btn btn-md col-sm-4  form-control btn-primary",
+                  "disabled": false,
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": "Deploy Contract",
+                "type": "button",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card"
+        >
+          <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Deploy Contract
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
+        "className": "col-sm-7 top-padding",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Deploy Contract
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "card",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Deploy Contract
+                </button>
+              </div>
+            </form>,
+            "className": "card-body",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Cap
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingCap"
+                    name="stakingCap"
+                    onChange={[MockFunction]}
+                    type="number"
+                    value={0}
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Start Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingStart"
+                    name="stakingStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking End Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingEnd"
+                    name="stakingEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw Start Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawStart"
+                    name="withdrawStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw End Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawEnd"
+                    name="withdrawEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group text-center"
+                >
+                  <button
+                    className="btn btn-md col-sm-4  form-control btn-primary"
+                    disabled={false}
+                    type="submit"
+                  >
+                    Deploy Contract
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [MockFunction],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      Staking Cap
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="stakingCap"
+                      name="stakingCap"
+                      onChange={[MockFunction]}
+                      type="number"
+                      value={0}
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking Cap",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "Staking Cap",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "stakingCap",
+                      "name": "stakingCap",
+                      "onChange": [MockFunction],
+                      "type": "number",
+                      "value": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      Staking Start Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="stakingStart"
+                      name="stakingStart"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking Start Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "Staking Start Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "stakingStart",
+                      "name": "stakingStart",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      Staking End Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="stakingEnd"
+                      name="stakingEnd"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking End Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "Staking End Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "stakingEnd",
+                      "name": "stakingEnd",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      withdraw Start Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="withdrawStart"
+                      name="withdrawStart"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "withdraw Start Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "withdraw Start Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "withdrawStart",
+                      "name": "withdrawStart",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      withdraw End Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="withdrawEnd"
+                      name="withdrawEnd"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "withdraw End Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "withdraw End Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "withdrawEnd",
+                      "name": "withdrawEnd",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-md col-sm-4  form-control btn-primary"
+                    disabled={false}
+                    type="submit"
+                  >
+                    Deploy Contract
+                  </button>,
+                  "className": "form-group text-center",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Deploy Contract",
+                    "className": "btn btn-md col-sm-4  form-control btn-primary",
+                    "disabled": false,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": "Deploy Contract",
+                  "type": "button",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;
+
+exports[`Test DeployForm Component It should match the snapshot when loading is true 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DeployForm
+    handleChange={[MockFunction]}
+    handleSubmit={[MockFunction]}
+    loading={true}
+    stakingCap={0}
+    stakingEnd=""
+    stakingStart=""
+    withdrawEnd=""
+    withdrawStart=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card"
+      >
+        <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Cap
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingCap"
+                name="stakingCap"
+                onChange={[MockFunction]}
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingStart"
+                name="stakingStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingEnd"
+                name="stakingEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawStart"
+                name="withdrawStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawEnd"
+                name="withdrawEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group text-center"
+            >
+              <button
+                className="btn btn-md col-sm-4  form-control btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>,
+      "className": "col-sm-7 top-padding",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Cap
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingCap"
+                name="stakingCap"
+                onChange={[MockFunction]}
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingStart"
+                name="stakingStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingEnd"
+                name="stakingEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawStart"
+                name="withdrawStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawEnd"
+                name="withdrawEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group text-center"
+            >
+              <button
+                className="btn btn-md col-sm-4  form-control btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>
+              </button>
+            </div>
+          </form>
+        </div>,
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Cap
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingCap"
+                name="stakingCap"
+                onChange={[MockFunction]}
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingStart"
+                name="stakingStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                Staking End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="stakingEnd"
+                name="stakingEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw Start Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawStart"
+                name="withdrawStart"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group row col-sm-12"
+            >
+              <label
+                className="col-sm-4"
+              >
+                withdraw End Date
+              </label>
+              <input
+                className="col-sm-7 form-control"
+                id="withdrawEnd"
+                name="withdrawEnd"
+                onChange={[MockFunction]}
+                required={true}
+                type="date"
+                value=""
+              />
+            </div>
+            <div
+              className="form-group text-center"
+            >
+              <button
+                className="btn btn-md col-sm-4  form-control btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>
+              </button>
+            </div>
+          </form>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>,
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={true}
+                  type="submit"
+                >
+                  <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>
+                </button>
+              </div>,
+            ],
+            "onSubmit": [MockFunction],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Cap
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingCap"
+                    name="stakingCap"
+                    onChange={[MockFunction]}
+                    type="number"
+                    value={0}
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking Cap",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "Staking Cap",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "stakingCap",
+                    "name": "stakingCap",
+                    "onChange": [MockFunction],
+                    "type": "number",
+                    "value": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Start Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingStart"
+                    name="stakingStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking Start Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "Staking Start Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "stakingStart",
+                    "name": "stakingStart",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking End Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingEnd"
+                    name="stakingEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking End Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "Staking End Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "stakingEnd",
+                    "name": "stakingEnd",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw Start Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawStart"
+                    name="withdrawStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "withdraw Start Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "withdraw Start Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "withdrawStart",
+                    "name": "withdrawStart",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw End Date
+                  </label>,
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawEnd"
+                    name="withdrawEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />,
+                ],
+                "className": "form-group row col-sm-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "withdraw End Date",
+                    "className": "col-sm-4",
+                  },
+                  "ref": null,
+                  "rendered": "withdraw End Date",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "col-sm-7 form-control",
+                    "id": "withdrawEnd",
+                    "name": "withdrawEnd",
+                    "onChange": [MockFunction],
+                    "required": true,
+                    "type": "date",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={true}
+                  type="submit"
+                >
+                  <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>
+                </button>,
+                "className": "form-group text-center",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>,
+                  "className": "btn btn-md col-sm-4  form-control btn-primary",
+                  "disabled": true,
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": Array [
+                      <span
+                        aria-hidden="true"
+                        className="spinner-border spinner-border-sm"
+                        role="status"
+                      />,
+                      " ",
+                      "Loading...",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "aria-hidden": "true",
+                        "className": "spinner-border spinner-border-sm",
+                        "role": "status",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    " ",
+                    "Loading...",
+                  ],
+                  "type": Symbol(react.fragment),
+                },
+                "type": "button",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card"
+        >
+          <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={true}
+                  type="submit"
+                >
+                  <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>,
+        "className": "col-sm-7 top-padding",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={true}
+                  type="submit"
+                >
+                  <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>
+                </button>
+              </div>
+            </form>
+          </div>,
+          "className": "card",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Cap
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingCap"
+                  name="stakingCap"
+                  onChange={[MockFunction]}
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingStart"
+                  name="stakingStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  Staking End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="stakingEnd"
+                  name="stakingEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw Start Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawStart"
+                  name="withdrawStart"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group row col-sm-12"
+              >
+                <label
+                  className="col-sm-4"
+                >
+                  withdraw End Date
+                </label>
+                <input
+                  className="col-sm-7 form-control"
+                  id="withdrawEnd"
+                  name="withdrawEnd"
+                  onChange={[MockFunction]}
+                  required={true}
+                  type="date"
+                  value=""
+                />
+              </div>
+              <div
+                className="form-group text-center"
+              >
+                <button
+                  className="btn btn-md col-sm-4  form-control btn-primary"
+                  disabled={true}
+                  type="submit"
+                >
+                  <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>
+                </button>
+              </div>
+            </form>,
+            "className": "card-body",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Cap
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingCap"
+                    name="stakingCap"
+                    onChange={[MockFunction]}
+                    type="number"
+                    value={0}
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking Start Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingStart"
+                    name="stakingStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    Staking End Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="stakingEnd"
+                    name="stakingEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw Start Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawStart"
+                    name="withdrawStart"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group row col-sm-12"
+                >
+                  <label
+                    className="col-sm-4"
+                  >
+                    withdraw End Date
+                  </label>
+                  <input
+                    className="col-sm-7 form-control"
+                    id="withdrawEnd"
+                    name="withdrawEnd"
+                    onChange={[MockFunction]}
+                    required={true}
+                    type="date"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="form-group text-center"
+                >
+                  <button
+                    className="btn btn-md col-sm-4  form-control btn-primary"
+                    disabled={true}
+                    type="submit"
+                  >
+                    <React.Fragment>
+                      <span
+                        aria-hidden="true"
+                        className="spinner-border spinner-border-sm"
+                        role="status"
+                      />
+                       
+                      Loading...
+                    </React.Fragment>
+                  </button>
+                </div>,
+              ],
+              "onSubmit": [MockFunction],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      Staking Cap
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="stakingCap"
+                      name="stakingCap"
+                      onChange={[MockFunction]}
+                      type="number"
+                      value={0}
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking Cap",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "Staking Cap",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "stakingCap",
+                      "name": "stakingCap",
+                      "onChange": [MockFunction],
+                      "type": "number",
+                      "value": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      Staking Start Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="stakingStart"
+                      name="stakingStart"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking Start Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "Staking Start Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "stakingStart",
+                      "name": "stakingStart",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      Staking End Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="stakingEnd"
+                      name="stakingEnd"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking End Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "Staking End Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "stakingEnd",
+                      "name": "stakingEnd",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      withdraw Start Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="withdrawStart"
+                      name="withdrawStart"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "withdraw Start Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "withdraw Start Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "withdrawStart",
+                      "name": "withdrawStart",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label
+                      className="col-sm-4"
+                    >
+                      withdraw End Date
+                    </label>,
+                    <input
+                      className="col-sm-7 form-control"
+                      id="withdrawEnd"
+                      name="withdrawEnd"
+                      onChange={[MockFunction]}
+                      required={true}
+                      type="date"
+                      value=""
+                    />,
+                  ],
+                  "className": "form-group row col-sm-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "withdraw End Date",
+                      "className": "col-sm-4",
+                    },
+                    "ref": null,
+                    "rendered": "withdraw End Date",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "col-sm-7 form-control",
+                      "id": "withdrawEnd",
+                      "name": "withdrawEnd",
+                      "onChange": [MockFunction],
+                      "required": true,
+                      "type": "date",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-md col-sm-4  form-control btn-primary"
+                    disabled={true}
+                    type="submit"
+                  >
+                    <React.Fragment>
+                      <span
+                        aria-hidden="true"
+                        className="spinner-border spinner-border-sm"
+                        role="status"
+                      />
+                       
+                      Loading...
+                    </React.Fragment>
+                  </button>,
+                  "className": "form-group text-center",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <React.Fragment>
+                      <span
+                        aria-hidden="true"
+                        className="spinner-border spinner-border-sm"
+                        role="status"
+                      />
+                       
+                      Loading...
+                    </React.Fragment>,
+                    "className": "btn btn-md col-sm-4  form-control btn-primary",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          aria-hidden="true"
+                          className="spinner-border spinner-border-sm"
+                          role="status"
+                        />,
+                        " ",
+                        "Loading...",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "aria-hidden": "true",
+                          "className": "spinner-border spinner-border-sm",
+                          "role": "status",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                      " ",
+                      "Loading...",
+                    ],
+                    "type": Symbol(react.fragment),
+                  },
+                  "type": "button",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;

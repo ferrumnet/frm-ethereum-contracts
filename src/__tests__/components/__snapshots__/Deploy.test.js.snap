@@ -1,0 +1,861 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test DeployInfo Component It should match the snapshot when loading is false 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DeployInfo
+    loading={false}
+    stakingCap={0}
+    stakingEnd=""
+    stakingStart=""
+    withdrawEnd=""
+    withdrawStart=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card"
+      >
+        <div
+          className="card-header"
+        >
+          Deployment Information
+        </div>
+        <ul
+          className="list-group list-group-flush"
+        >
+          <li
+            className="list-group-item"
+          >
+            <strong>
+              Staking Cap: 
+            </strong>
+             
+            0
+          </li>
+          <li
+            className="list-group-item"
+          >
+            <strong>
+              Staking Start Date: 
+            </strong>
+             
+            
+          </li>
+          <li
+            className="list-group-item"
+          >
+            <strong>
+              Staking End Date:
+            </strong>
+             
+            
+          </li>
+          <li
+            className="list-group-item"
+          >
+            <strong>
+              withdraw Start Date:
+            </strong>
+             
+            
+          </li>
+          <li
+            className="list-group-item"
+          >
+            <strong>
+              withdraw End Date:
+            </strong>
+             
+            
+          </li>
+        </ul>
+      </div>,
+      "className": "col-sm-4 top-padding",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="card-header"
+          >
+            Deployment Information
+          </div>,
+          <ul
+            className="list-group list-group-flush"
+          >
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Staking Cap: 
+              </strong>
+               
+              0
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Staking Start Date: 
+              </strong>
+               
+              
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Staking End Date:
+              </strong>
+               
+              
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                withdraw Start Date:
+              </strong>
+               
+              
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                withdraw End Date:
+              </strong>
+               
+              
+            </li>
+          </ul>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Deployment Information",
+            "className": "card-header",
+          },
+          "ref": null,
+          "rendered": "Deployment Information",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  Staking Cap: 
+                </strong>
+                 
+                0
+              </li>,
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  Staking Start Date: 
+                </strong>
+                 
+                
+              </li>,
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  Staking End Date:
+                </strong>
+                 
+                
+              </li>,
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  withdraw Start Date:
+                </strong>
+                 
+                
+              </li>,
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  withdraw End Date:
+                </strong>
+                 
+                
+              </li>,
+            ],
+            "className": "list-group list-group-flush",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Staking Cap: 
+                  </strong>,
+                  " ",
+                  0,
+                ],
+                "className": "list-group-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking Cap: ",
+                  },
+                  "ref": null,
+                  "rendered": "Staking Cap: ",
+                  "type": "strong",
+                },
+                " ",
+                0,
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Staking Start Date: 
+                  </strong>,
+                  " ",
+                  "",
+                ],
+                "className": "list-group-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking Start Date: ",
+                  },
+                  "ref": null,
+                  "rendered": "Staking Start Date: ",
+                  "type": "strong",
+                },
+                " ",
+                "",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    Staking End Date:
+                  </strong>,
+                  " ",
+                  "",
+                ],
+                "className": "list-group-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Staking End Date:",
+                  },
+                  "ref": null,
+                  "rendered": "Staking End Date:",
+                  "type": "strong",
+                },
+                " ",
+                "",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    withdraw Start Date:
+                  </strong>,
+                  " ",
+                  "",
+                ],
+                "className": "list-group-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "withdraw Start Date:",
+                  },
+                  "ref": null,
+                  "rendered": "withdraw Start Date:",
+                  "type": "strong",
+                },
+                " ",
+                "",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <strong>
+                    withdraw End Date:
+                  </strong>,
+                  " ",
+                  "",
+                ],
+                "className": "list-group-item",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "withdraw End Date:",
+                  },
+                  "ref": null,
+                  "rendered": "withdraw End Date:",
+                  "type": "strong",
+                },
+                " ",
+                "",
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card"
+        >
+          <div
+            className="card-header"
+          >
+            Deployment Information
+          </div>
+          <ul
+            className="list-group list-group-flush"
+          >
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Staking Cap: 
+              </strong>
+               
+              0
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Staking Start Date: 
+              </strong>
+               
+              
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                Staking End Date:
+              </strong>
+               
+              
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                withdraw Start Date:
+              </strong>
+               
+              
+            </li>
+            <li
+              className="list-group-item"
+            >
+              <strong>
+                withdraw End Date:
+              </strong>
+               
+              
+            </li>
+          </ul>
+        </div>,
+        "className": "col-sm-4 top-padding",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="card-header"
+            >
+              Deployment Information
+            </div>,
+            <ul
+              className="list-group list-group-flush"
+            >
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  Staking Cap: 
+                </strong>
+                 
+                0
+              </li>
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  Staking Start Date: 
+                </strong>
+                 
+                
+              </li>
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  Staking End Date:
+                </strong>
+                 
+                
+              </li>
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  withdraw Start Date:
+                </strong>
+                 
+                
+              </li>
+              <li
+                className="list-group-item"
+              >
+                <strong>
+                  withdraw End Date:
+                </strong>
+                 
+                
+              </li>
+            </ul>,
+          ],
+          "className": "card",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Deployment Information",
+              "className": "card-header",
+            },
+            "ref": null,
+            "rendered": "Deployment Information",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <li
+                  className="list-group-item"
+                >
+                  <strong>
+                    Staking Cap: 
+                  </strong>
+                   
+                  0
+                </li>,
+                <li
+                  className="list-group-item"
+                >
+                  <strong>
+                    Staking Start Date: 
+                  </strong>
+                   
+                  
+                </li>,
+                <li
+                  className="list-group-item"
+                >
+                  <strong>
+                    Staking End Date:
+                  </strong>
+                   
+                  
+                </li>,
+                <li
+                  className="list-group-item"
+                >
+                  <strong>
+                    withdraw Start Date:
+                  </strong>
+                   
+                  
+                </li>,
+                <li
+                  className="list-group-item"
+                >
+                  <strong>
+                    withdraw End Date:
+                  </strong>
+                   
+                  
+                </li>,
+              ],
+              "className": "list-group list-group-flush",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong>
+                      Staking Cap: 
+                    </strong>,
+                    " ",
+                    0,
+                  ],
+                  "className": "list-group-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking Cap: ",
+                    },
+                    "ref": null,
+                    "rendered": "Staking Cap: ",
+                    "type": "strong",
+                  },
+                  " ",
+                  0,
+                ],
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong>
+                      Staking Start Date: 
+                    </strong>,
+                    " ",
+                    "",
+                  ],
+                  "className": "list-group-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking Start Date: ",
+                    },
+                    "ref": null,
+                    "rendered": "Staking Start Date: ",
+                    "type": "strong",
+                  },
+                  " ",
+                  "",
+                ],
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong>
+                      Staking End Date:
+                    </strong>,
+                    " ",
+                    "",
+                  ],
+                  "className": "list-group-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Staking End Date:",
+                    },
+                    "ref": null,
+                    "rendered": "Staking End Date:",
+                    "type": "strong",
+                  },
+                  " ",
+                  "",
+                ],
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong>
+                      withdraw Start Date:
+                    </strong>,
+                    " ",
+                    "",
+                  ],
+                  "className": "list-group-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "withdraw Start Date:",
+                    },
+                    "ref": null,
+                    "rendered": "withdraw Start Date:",
+                    "type": "strong",
+                  },
+                  " ",
+                  "",
+                ],
+                "type": "li",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <strong>
+                      withdraw End Date:
+                    </strong>,
+                    " ",
+                    "",
+                  ],
+                  "className": "list-group-item",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "withdraw End Date:",
+                    },
+                    "ref": null,
+                    "rendered": "withdraw End Date:",
+                    "type": "strong",
+                  },
+                  " ",
+                  "",
+                ],
+                "type": "li",
+              },
+            ],
+            "type": "ul",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;
+
+exports[`Test DeployInfo Component It should match the snapshot when loading is true 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <DeployInfo
+    loading={true}
+    stakingCap={0}
+    stakingEnd=""
+    stakingStart=""
+    withdrawEnd=""
+    withdrawStart=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": "Loading ....",
+      "className": "col-sm-4 top-padding",
+    },
+    "ref": null,
+    "rendered": "Loading ....",
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Loading ....",
+        "className": "col-sm-4 top-padding",
+      },
+      "ref": null,
+      "rendered": "Loading ....",
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;

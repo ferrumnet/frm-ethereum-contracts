@@ -11,12 +11,15 @@ const getDeploymentValues = async festaking => {
     .call()
     .call();
 
+  const stakingCap = await festaking.methods.stakingCap.call().call();
+
   return {
     deployedCap,
     deployedStakingStart,
     deployedStakingEnd,
     deployedWithdrawStart,
-    deployedWithdrawEnd
+    deployedWithdrawEnd,
+    stakingCap
   };
 };
 

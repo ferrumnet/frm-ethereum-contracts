@@ -1,8 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
-const Header = () => {
+const Header = ({
+  history: {
+    location: { pathname }
+  }
+}) => {
+  const isAdmin = pathname.match(/admin/g) ? true : false;
+
   const activeStyle = { color: "#FFFFFF" };
   return (
     <header>
@@ -23,46 +29,52 @@ const Header = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav mr-auto ">
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                exact
-                to="/"
-                activeStyle={activeStyle}
-              >
-                Reward
-              </NavLink>
-            </li>
+            {isAdmin && (
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    exact
+                    to="/admin/deploy"
+                    activeStyle={activeStyle}
+                  >
+                    Deploy
+                  </NavLink>
+                </li>
 
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                exact
-                to="/stake"
-                activeStyle={activeStyle}
+            )}
+          </ul>
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                id="navbarDropdownMenuLink-4"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
-                Stake
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                exact
-                to="/withdraw"
-                activeStyle={activeStyle}
+                <i className="fas fa-user"></i> Account
+              </a>
+              <div
+                className="dropdown-menu dropdown-menu-right p-2"
+                aria-labelledby="navbarDropdownMenuLink-4"
               >
-                Withdraw
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                exact
-                to="/deploy"
-                activeStyle={activeStyle}
-              >
-                Deploy
-              </NavLink>
+                <NavLink
+                  className="dropdown-item"
+                  exact
+                  to="/admin/deploy"
+                  activeStyle={activeStyle}
+                >
+                  Admin
+                </NavLink>
+                <NavLink
+                  className="dropdown-item"
+                  exact
+                  to="/"
+                  activeStyle={activeStyle}
+                >
+                  Customer
+                </NavLink>
+              </div>
             </li>
           </ul>
         </div>
@@ -71,4 +83,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

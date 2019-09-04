@@ -19,6 +19,16 @@
   margin: 0 auto;
 }
 
+.component-height {
+  min-height: 55vh;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .two-inline-buttons button {
   margin-left: 25px;
   margin-right: 25px;
@@ -30,11 +40,4 @@
     margin: 20px;
     text-align: center;
   }
-}
-
-.footer {
-  /* position: absolute; */
-  /* bottom: 0; */
-  /* top: 85vh; */
-  /* width: 100%; */
 }

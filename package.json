@@ -24,21 +24,25 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
+    "ganache-cli": "^6.5.1",
     "prettier": "^1.18.2",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.3"
   },
   "dependencies": {
     "abi-decoder": "^2.2.0",
     "bootstrap": "^4.3.1",
-    "ganache-cli": "^6.5.1",
+    "history": "^4.10.0",
     "mocha": "^6.2.0",
     "node-sass": "^4.12.0",
     "openzeppelin-solidity": "^2.3.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-multistep": "^3.6.13",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.1",
@@ -50,5 +54,14 @@
     "truffle-hdwallet-provider": "^1.0.15",
     "truffle-security": "^1.5.3",
     "web3": "^1.2.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/index.js",
+      "!src/serviceWorker.js",
+      "!src/redux/store/index.js",
+      "!node_modules/"
+    ]
   }
 }

@@ -1,97 +1,59 @@
 import React, { Component } from "react";
-import {
-  WithdrawStepper,
-  WithdrawCard,
-  Loader
-} from "../components/WithdrawForm";
+import { WithdrawStepper } from "../components/WithdrawForm";
+import WithdrawCard from "../components/common/DisplayInfoCard";
+import Loader from "../components/common/MultiStepFormLoader";
 import { connect } from "react-redux";
-import { deployContractAction } from "../redux/actions/deploy";
-import { errorToast, successToast } from "../utils/toasts";
+import { connectContractAction } from "../redux/actions/deploy";
+import { vars } from "../redux/actions/stake";
+import { withdraw, withdrawToDefaultState } from "../redux/actions/withdraw";
+import { errorToast } from "../utils/toasts";
+import NotFound from "../components/common/NotFound";
 
-class WithDraw extends Component {
+export class WithDraw extends Component {
   state = {
     amount: 0,
     step: 1,
-    loading: false,
-    complete: false
-  };
-
-  nextStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step + 1,
-      loading: false,
-      complete: false
-    });
-  };
-
-  resetStep = () => {
-    this.setState({
-      amount: 0,
-      step: 1,
-      loading: false,
-      complete: false
-    });
-  };
-
-  setLoading = () => {
-    this.setState({ loading: true, complete: false });
-  };
-
-  stopLoading = () => {
-    this.setState({ loading: false });
+    disable: false
   };
 
   async componentDidMount() {
     const {
-      deployContractAction,
-      contract: { data }
+      connectContractAction,
+      contract,
+      match: {
+        params: { address }
+      }
     } = this.props;
-    if (!data) {
-      await deployContractAction();
+    if (!contract.data) {
+      await connectContractAction(address);
     }
-    await this.balance();
-    await this.vars();
+    const {
+      contract: { error }
+    } = this.props;
+    !error && this.disableButton();
   }
 
-  call = async (method, ...args) => {
+  disableButton = async () => {
     const {
-      contract: {
-        data: { festaking }
+      stake: {
+        variables: { deployedWithdrawStart, deployedWithdrawEnd }
       }
     } = this.props;
-    return await festaking.methods[method](...args).call();
+
+    const currentDate = new Date();
+    const now = currentDate.getTime();
+
+    (now < deployedWithdrawStart*1000 || now > deployedWithdrawEnd*1000 ) &&
+      this.setState({  disable: true });
   };
 
-  vars = async () => {
-    const {
-      contract: {
-        data: { ac1 }
-      }
-    } = this.props;
-    const stakedTotal = await this.call("stakedTotal");
-    const totalReward = await this.call("totalReward");
-    const earlyWithdrawReward = await this.call("earlyWithdrawReward");
-    const rewardBalance = await this.call("rewardBalance");
-    const stakedBalance = await this.call("stakeOf", ac1);
-
-    this.setState({
-      stakedTotal,
-      totalReward,
-      earlyWithdrawReward,
-      rewardBalance,
-      stakedBalance
-    });
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({ step: step + 1 });
   };
 
-  balance = async () => {
-    const {
-      contract: {
-        data: { ac1, frm }
-      }
-    } = this.props;
-    const res = await frm.methods.balanceOf(ac1).call();
-    this.setState({ balance: res.toString() });
+  resetStep = () => {
+    this.setState({ amount: 0, step: 1 });
   };
 
   handleChange = e => {
@@ -100,99 +62,82 @@ class WithDraw extends Component {
   };
 
   validateWithdraw = async event => {
-    this.setLoading();
     event.preventDefault();
     const {
-      contract: {
-        data: { festaking, ac1 }
+      stake: {
+        variables: { stakeOf }
       }
     } = this.props;
     const { amount } = this.state;
 
     if (amount <= 0) {
-      this.stopLoading();
       errorToast("Please enter a value above zero");
       return;
     }
 
-    const balanceAmount = await festaking.methods.stakeOf(ac1).call();
-    if (parseInt(balanceAmount) < parseInt(amount)) {
-      this.stopLoading();
-      errorToast("You don't have enough money");
+    if (parseInt(stakeOf) < parseInt(amount)) {
+      errorToast("You don't have enough funds");
       return;
     }
     this.nextStep();
   };
 
-  authorizeWithdraw = async event => {
-    this.setLoading();
-    event.preventDefault();
-    const {
-      contract: {
-        data: { contractAddress, ac1, frm, festaking, owner, GAS }
-      }
-    } = this.props;
-    const { amount } = this.state;
-    try {
-      await festaking.methods
-        .setEarlyWithdrawalPeriod(1000)
-        .send({ from: owner, gas: GAS });
-
-      await frm.methods.approve(contractAddress, amount).send({ from: ac1 });
-      this.nextStep();
-    } catch (error) {
-      errorToast("Unable to withdrawal, try again");
-      this.stopLoading();
-      this.resetStep();
-    }
-  };
-
   handleSubmit = async event => {
-    this.setLoading();
     event.preventDefault();
     const {
-      contract: {
-        data: { festaking, ac1, GAS }
-      }
+      contract: { data },
+      withdrawFunc,
+      withdrawToDefaultStateFunc
     } = this.props;
     const { amount } = this.state;
-    try {
-      await festaking.methods.withdraw(amount).send({ from: ac1, gas: GAS });
-      await this.vars();
-      await this.balance();
-      const balanceAmount = await festaking.methods.stakeOf(ac1).call();
-      this.setState({ totalReward: balanceAmount });
-      successToast("Successfully withdrew");
-      this.setState({ complete: true });
-      setTimeout(() => this.resetStep(), 4000);
-    } catch (e) {
-      errorToast("Error withdrawing");
-      this.stopLoading();
-      this.resetStep();
-    }
+    await withdrawFunc(amount, data);
 
-    await festaking.methods.setStakingPeriod().send({ from: ac1, gas: GAS });
+    setTimeout(() => {
+      console.log("calling time out");
+      this.resetStep();
+      withdrawToDefaultStateFunc();
+    }, 3000);
   };
 
   render() {
+    const { amount, step, disable } = this.state;
     const {
-      amount,
-      balance,
-      stakedBalance,
-      stakedTotal,
-      step,
-      loading,
-      complete
-    } = this.state;
-    return (
+      contract: { error },
+      stake: {
+        variables: {
+          balanceOf,
+          stakedBalance,
+          stakedTotal,
+          earlyWithdrawReward,
+          rewardBalance,
+          deployedWithdrawStart,
+          deployedWithdrawEnd,
+          deployedStakingStart,
+          deployedStakingEnd,
+          stakingCap
+        }
+      },
+      withdraw: { loading, complete }
+    } = this.props;
+
+    return error ? (
+      <NotFound />
+    ) : (
       <div className="container col-sm-10 col-offset-3">
         <div className="row">
           <WithdrawCard
             stakedTotal={stakedTotal}
             stakedBalance={stakedBalance}
-            balance={balance}
+            balance={balanceOf}
+            earlyWithdrawReward={earlyWithdrawReward}
+            rewardBalance={rewardBalance}
+            withdrawStart={deployedWithdrawStart}
+            withdrawEnd={deployedWithdrawEnd}
+            stakingStarts={deployedStakingStart}
+            stakingEnds={deployedStakingEnd}
+            stakingCap={stakingCap}
           />
-          <div className="col-sm-2"></div>
+          <div className="col-sm-1"></div>
           <div className="col-sm-5">
             {loading ? (
               <Loader complete={complete} />
@@ -203,9 +148,9 @@ class WithDraw extends Component {
                 validateWithdraw={this.validateWithdraw}
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
-                authorizeWithdraw={this.authorizeWithdraw}
                 nextStep={this.nextStep}
                 prevStep={this.resetStep}
+                disable={disable}
               />
             )}
           </div>
@@ -215,12 +160,17 @@ class WithDraw extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  contract: state.contract
+const mapStateToProps = ({ stake, withdraw, contract }) => ({
+  contract,
+  stake,
+  withdraw
 });
 
 const mapDispatchToProps = {
-  deployContractAction: deployContractAction
+  connectContractAction: connectContractAction,
+  withdrawFunc: withdraw,
+  varsFunc: vars,
+  withdrawToDefaultStateFunc: withdrawToDefaultState
 };
 
 export default connect(

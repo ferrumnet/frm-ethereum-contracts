@@ -1,72 +1,74 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { StakeCard, StakeStepper, Loader } from "../components/StakeForm";
-import { deployContractAction } from "../redux/actions/deploy";
-import { errorToast, successToast } from "../utils/toasts";
+import Loader from "../components/common/MultiStepFormLoader";
+import StakeCard from "../components/common/DisplayInfoCard";
+import { StakeStepper } from "../components/StakeForm";
+import { connectContractAction } from "../redux/actions/deploy";
+import NotFound from "../components/common/NotFound";
+import {
+  authorizeAddStake,
+  stake,
+  vars,
+  approveStakeSuccesfull
+} from "../redux/actions/stake";
+import { errorToast } from "../utils/toasts";
 
-class Stake extends Component {
+export class Stake extends Component {
   state = {
     amount: 0,
     step: 1,
-    loading: false,
-    complete: false
-  };
-
-  nextStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step + 1,
-      loading: false,
-      complete: false
-    });
-  };
-
-  resetStep = () => {
-    this.setState({
-      amount: 0,
-      step: 1,
-      loading: false,
-      complete: false
-    });
-  };
-
-  setLoading = () => {
-    this.setState({ loading: true, complete: false });
+    disable: false
   };
 
   async componentDidMount() {
     const {
-      deployContractAction,
-      contract: { data }
-    } = this.props;
-    if (!data) {
-      await deployContractAction();
-    }
-    await this.vars();
-  }
-
-  call = async (method, ...args) => {
-    const {
-      contract: {
-        data: { festaking }
+      connectContractActionFunc,
+      contract,
+      match: {
+        params: { address }
       }
     } = this.props;
-    return await festaking.methods[method](...args).call();
+    if (!contract.data) {
+      await connectContractActionFunc(address);
+    }
+    const {
+      contract: { error },
+    } = this.props;
+    !error &&
+      (async () => {
+        await this.continueWithApprove();
+      })();
+  }
+
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({ step: step + 1 });
   };
 
-  vars = async () => {
-    const stakedTotal = await this.call("stakedTotal");
-    const totalReward = await this.call("totalReward");
-    const earlyWithdrawReward = await this.call("earlyWithdrawReward");
-    const rewardBalance = await this.call("rewardBalance");
-    const stakedBalance = await this.call("stakedBalance");
-    this.setState({
-      stakedTotal,
-      totalReward,
-      earlyWithdrawReward,
-      rewardBalance,
-      stakedBalance
-    });
+  resetStep = () => {
+    this.setState({ amount: 0, step: 1 });
+  };
+
+  continueWithApprove = async () => {
+    const {
+      contract: { data },
+      stake: {
+        variables: { deployedStakingStart, deployedStakingEnd }
+      }
+    } = this.props;
+    const {disable} = this.state;
+    const { frm, contractAddress, ac1 } = data;
+    const allowance = await frm.methods.allowance(ac1, contractAddress).call();
+
+    const currentDate = new Date();
+    const now = currentDate.getTime();
+
+   (
+      now < deployedStakingStart * 1000 ||
+      now > deployedStakingEnd * 1000
+    ) && this.setState({ disable: true });
+
+    !disable && (allowance > 0) && this.setState({ step: 3, amount: allowance });
   };
 
   handleChange = e => {
@@ -74,29 +76,27 @@ class Stake extends Component {
     this.setState({ [name]: value });
   };
 
-  validateStake = async event => {
-    this.setLoading();
-    event.preventDefault();
+  validateStake = async () => {
     const {
       contract: {
         data: { STAKING_CAP }
+      },
+      stake: {
+        variables: { rewardBalance, stakedBalance }
       }
     } = this.props;
-    const { amount, stakedBalance } = this.state;
+    const { amount } = this.state;
 
     if (amount <= 0) {
-      this.stopLoading();
       errorToast("Please enter a value above zero");
       return;
     }
     if (parseInt(amount) + parseInt(stakedBalance) > STAKING_CAP) {
-      this.stopLoading();
       errorToast("Can't stake above the staking cap");
       return;
     }
-    const rewardBalance = await this.call("rewardBalance");
+
     if (rewardBalance <= 0) {
-      this.stopLoading();
       errorToast("Can't stake, reward hasn't been set yet");
       return;
     }
@@ -104,76 +104,74 @@ class Stake extends Component {
   };
 
   authorizeStake = async event => {
-    this.setLoading();
     event.preventDefault();
     const {
-      contract: {
-        data: { contractAddress, ac1, frm, owner, GAS }
-      }
+      contract: { data },
+      authorizeAddStakeFunc
     } = this.props;
     const { amount } = this.state;
     try {
-      await frm.methods.transfer(ac1, amount).send({ from: owner, gas: GAS });
-      await frm.methods.approve(contractAddress, amount).send({ from: ac1 });
-      await frm.methods.allowance(ac1, contractAddress).call();
+      await authorizeAddStakeFunc(amount, data);
       this.nextStep();
     } catch (error) {
-      errorToast("Unable to approve the stake, try again");
-      this.stopLoading();
       this.resetStep();
     }
-  };
-  stopLoading = () => {
-    this.setState({ loading: false });
   };
 
-  handleSubmit = async event => {
-    this.setLoading();
-    event.preventDefault();
+  handleSubmit = async () => {
     const {
-      contract: {
-        data: { festaking, ac1, GAS }
-      }
+      contract: { data },
+      stakeFunc,
+      approveStakeSuccesfullFunc
     } = this.props;
     const { amount } = this.state;
-    try {
-      await festaking.methods.stake(amount).send({ from: ac1, gas: GAS });
-      const stakedTotal = await this.call("stakedTotal");
-      this.setState({ stakedTotal });
-      await this.vars();
-      successToast("Stake was successfully added");
-      this.setState({ complete: true });
-      setTimeout(() => this.resetStep(), 4000);
-    } catch (e) {
-      errorToast("Error adding a stake");
-      this.stopLoading();
+    await stakeFunc(amount, data);
+    setTimeout(() => {
+      approveStakeSuccesfullFunc();
       this.resetStep();
-    }
+    }, 3000);
   };
 
   render() {
+    const { amount, step, disable } = this.state;
     const {
-      amount,
-      rewardBalance,
-      stakedBalance,
-      step,
-      loading,
-      complete
-    } = this.state;
-    const {
-      contract: { data }
+      contract: { error },
+      stake: {
+        loading,
+        complete,
+        variables: {
+          balanceOf,
+          stakedBalance,
+          stakedTotal,
+          earlyWithdrawReward,
+          rewardBalance,
+          deployedWithdrawStart,
+          deployedWithdrawEnd,
+          deployedStakingStart,
+          deployedStakingEnd,
+          stakingCap
+        }
+      }
     } = this.props;
-
-    return (
+    return error ? (
+      <NotFound />
+    ) : (
       <div className="container col-sm-10 col-offset-3">
         <div className="row">
           <StakeCard
-            stakingCap={(data && data.STAKING_CAP) || 0}
-            reward={rewardBalance}
-            stakedTotal={stakedBalance}
+            stakedTotal={stakedTotal}
+            stakedBalance={stakedBalance}
+            balance={balanceOf}
+            earlyWithdrawReward={earlyWithdrawReward}
+            rewardBalance={rewardBalance}
+            withdrawStart={deployedWithdrawStart}
+            withdrawEnd={deployedWithdrawEnd}
+            stakingStarts={deployedStakingStart}
+            stakingEnds={deployedStakingEnd}
+            stakingCap={stakingCap}
           />
-          <div className="col-sm-2"> </div>
-          <div className="col-sm-6">
+          <div className="col-sm-1"> </div>
+          <div className="col-sm-5">
             {loading ? (
               <Loader complete={complete} />
             ) : (
@@ -185,7 +183,8 @@ class Stake extends Component {
                 handleChange={this.handleChange}
                 authorizeStake={this.authorizeStake}
                 nextStep={this.nextStep}
-                prevStep={this.resetStep}
+                cancel={this.resetStep}
+                disable={disable}
               />
             )}
           </div>
@@ -195,12 +194,17 @@ class Stake extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  contract: state.contract
+const mapStateToProps = ({ contract, stake }) => ({
+  contract,
+  stake
 });
 
 const mapDispatchToProps = {
-  deployContractAction: deployContractAction
+  connectContractActionFunc: connectContractAction,
+  authorizeAddStakeFunc: authorizeAddStake,
+  stakeFunc: stake,
+  varsFunc: vars,
+  approveStakeSuccesfullFunc: approveStakeSuccesfull
 };
 
 export default connect(

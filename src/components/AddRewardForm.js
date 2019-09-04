@@ -1,6 +1,12 @@
 import React from "react";
 
-const AddRewardForm = ({ handleChange, handleSubmit, state, loading }) => (
+const AddRewardForm = ({
+  handleChange,
+  handleSubmit,
+  state,
+  loading,
+  disable
+}) => (
   <div className="container col-sm-4 col-offset-3">
     <div className="card">
       <div className="card-body">
@@ -14,6 +20,7 @@ const AddRewardForm = ({ handleChange, handleSubmit, state, loading }) => (
               aria-describedby="emailHelp"
               placeholder="Enter Reward Amount"
               onChange={handleChange}
+              id="reward-amount"
               value={state.amount}
             />
           </div>
@@ -25,15 +32,16 @@ const AddRewardForm = ({ handleChange, handleSubmit, state, loading }) => (
               name="withdrawable"
               placeholder="Enter Withdraw Amount"
               onChange={handleChange}
+              id="withdrawable-amount"
               value={state.withdrawable}
             />
           </div>
           <button
             type="submit"
             className="btn btn-primary"
-            disabled={state.loading}
+            disabled={loading || disable}
           >
-            {state.loading ? (
+            {loading ? (
               <>
                 <span
                   className="spinner-border spinner-border-sm"

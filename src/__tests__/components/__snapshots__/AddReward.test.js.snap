@@ -1,0 +1,1665 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AddRewardForm Component It should match the snapshot when loading is true 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddRewardForm
+    handleChange={[MockFunction]}
+    handleSubmit={[MockFunction]}
+    loading={true}
+    state={
+      Object {
+        "amount": 0,
+        "withdrawable": 0,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card"
+      >
+        <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group"
+            >
+              <label>
+                Reward Amount
+              </label>
+              <input
+                aria-describedby="emailHelp"
+                className="form-control"
+                id="reward-amount"
+                name="amount"
+                onChange={[MockFunction]}
+                placeholder="Enter Reward Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <label>
+                Withdraw Amount
+              </label>
+              <input
+                className="form-control"
+                id="withdrawable-amount"
+                name="withdrawable"
+                onChange={[MockFunction]}
+                placeholder="Enter Withdraw Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={true}
+              type="submit"
+            >
+              <React.Fragment>
+                <span
+                  aria-hidden="true"
+                  className="spinner-border spinner-border-sm"
+                  role="status"
+                />
+                 
+                Loading...
+              </React.Fragment>
+            </button>
+          </form>
+        </div>
+      </div>,
+      "className": "container col-sm-4 col-offset-3",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group"
+            >
+              <label>
+                Reward Amount
+              </label>
+              <input
+                aria-describedby="emailHelp"
+                className="form-control"
+                id="reward-amount"
+                name="amount"
+                onChange={[MockFunction]}
+                placeholder="Enter Reward Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <label>
+                Withdraw Amount
+              </label>
+              <input
+                className="form-control"
+                id="withdrawable-amount"
+                name="withdrawable"
+                onChange={[MockFunction]}
+                placeholder="Enter Withdraw Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={true}
+              type="submit"
+            >
+              <React.Fragment>
+                <span
+                  aria-hidden="true"
+                  className="spinner-border spinner-border-sm"
+                  role="status"
+                />
+                 
+                Loading...
+              </React.Fragment>
+            </button>
+          </form>
+        </div>,
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group"
+            >
+              <label>
+                Reward Amount
+              </label>
+              <input
+                aria-describedby="emailHelp"
+                className="form-control"
+                id="reward-amount"
+                name="amount"
+                onChange={[MockFunction]}
+                placeholder="Enter Reward Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <label>
+                Withdraw Amount
+              </label>
+              <input
+                className="form-control"
+                id="withdrawable-amount"
+                name="withdrawable"
+                onChange={[MockFunction]}
+                placeholder="Enter Withdraw Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={true}
+              type="submit"
+            >
+              <React.Fragment>
+                <span
+                  aria-hidden="true"
+                  className="spinner-border spinner-border-sm"
+                  role="status"
+                />
+                 
+                Loading...
+              </React.Fragment>
+            </button>
+          </form>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>,
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>,
+              <button
+                className="btn btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>
+              </button>,
+            ],
+            "onSubmit": [MockFunction],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label>
+                    Reward Amount
+                  </label>,
+                  <input
+                    aria-describedby="emailHelp"
+                    className="form-control"
+                    id="reward-amount"
+                    name="amount"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Reward Amount"
+                    type="number"
+                    value={0}
+                  />,
+                ],
+                "className": "form-group",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Reward Amount",
+                  },
+                  "ref": null,
+                  "rendered": "Reward Amount",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "aria-describedby": "emailHelp",
+                    "className": "form-control",
+                    "id": "reward-amount",
+                    "name": "amount",
+                    "onChange": [MockFunction],
+                    "placeholder": "Enter Reward Amount",
+                    "type": "number",
+                    "value": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label>
+                    Withdraw Amount
+                  </label>,
+                  <input
+                    className="form-control"
+                    id="withdrawable-amount"
+                    name="withdrawable"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Withdraw Amount"
+                    type="number"
+                    value={0}
+                  />,
+                ],
+                "className": "form-group",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Withdraw Amount",
+                  },
+                  "ref": null,
+                  "rendered": "Withdraw Amount",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "form-control",
+                    "id": "withdrawable-amount",
+                    "name": "withdrawable",
+                    "onChange": [MockFunction],
+                    "placeholder": "Enter Withdraw Amount",
+                    "type": "number",
+                    "value": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>,
+                "className": "btn btn-primary",
+                "disabled": true,
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": Array [
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />,
+                    " ",
+                    "Loading...",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "aria-hidden": "true",
+                      "className": "spinner-border spinner-border-sm",
+                      "role": "status",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "span",
+                  },
+                  " ",
+                  "Loading...",
+                ],
+                "type": Symbol(react.fragment),
+              },
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card"
+        >
+          <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <button
+                className="btn btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>
+              </button>
+            </form>
+          </div>
+        </div>,
+        "className": "container col-sm-4 col-offset-3",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <button
+                className="btn btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>
+              </button>
+            </form>
+          </div>,
+          "className": "card",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <button
+                className="btn btn-primary"
+                disabled={true}
+                type="submit"
+              >
+                <React.Fragment>
+                  <span
+                    aria-hidden="true"
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                  />
+                   
+                  Loading...
+                </React.Fragment>
+              </button>
+            </form>,
+            "className": "card-body",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Reward Amount
+                  </label>
+                  <input
+                    aria-describedby="emailHelp"
+                    className="form-control"
+                    id="reward-amount"
+                    name="amount"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Reward Amount"
+                    type="number"
+                    value={0}
+                  />
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Withdraw Amount
+                  </label>
+                  <input
+                    className="form-control"
+                    id="withdrawable-amount"
+                    name="withdrawable"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Withdraw Amount"
+                    type="number"
+                    value={0}
+                  />
+                </div>,
+                <button
+                  className="btn btn-primary"
+                  disabled={true}
+                  type="submit"
+                >
+                  <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>
+                </button>,
+              ],
+              "onSubmit": [MockFunction],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label>
+                      Reward Amount
+                    </label>,
+                    <input
+                      aria-describedby="emailHelp"
+                      className="form-control"
+                      id="reward-amount"
+                      name="amount"
+                      onChange={[MockFunction]}
+                      placeholder="Enter Reward Amount"
+                      type="number"
+                      value={0}
+                    />,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Reward Amount",
+                    },
+                    "ref": null,
+                    "rendered": "Reward Amount",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "aria-describedby": "emailHelp",
+                      "className": "form-control",
+                      "id": "reward-amount",
+                      "name": "amount",
+                      "onChange": [MockFunction],
+                      "placeholder": "Enter Reward Amount",
+                      "type": "number",
+                      "value": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label>
+                      Withdraw Amount
+                    </label>,
+                    <input
+                      className="form-control"
+                      id="withdrawable-amount"
+                      name="withdrawable"
+                      onChange={[MockFunction]}
+                      placeholder="Enter Withdraw Amount"
+                      type="number"
+                      value={0}
+                    />,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Withdraw Amount",
+                    },
+                    "ref": null,
+                    "rendered": "Withdraw Amount",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "form-control",
+                      "id": "withdrawable-amount",
+                      "name": "withdrawable",
+                      "onChange": [MockFunction],
+                      "placeholder": "Enter Withdraw Amount",
+                      "type": "number",
+                      "value": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <React.Fragment>
+                    <span
+                      aria-hidden="true"
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    />
+                     
+                    Loading...
+                  </React.Fragment>,
+                  "className": "btn btn-primary",
+                  "disabled": true,
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": Array [
+                      <span
+                        aria-hidden="true"
+                        className="spinner-border spinner-border-sm"
+                        role="status"
+                      />,
+                      " ",
+                      "Loading...",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "aria-hidden": "true",
+                        "className": "spinner-border spinner-border-sm",
+                        "role": "status",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "span",
+                    },
+                    " ",
+                    "Loading...",
+                  ],
+                  "type": Symbol(react.fragment),
+                },
+                "type": "button",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;
+
+exports[`Test AddRewardForm Component It should match the snapshot when loading is true 2`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddRewardForm
+    handleChange={[MockFunction]}
+    handleSubmit={[MockFunction]}
+    loading={false}
+    state={
+      Object {
+        "amount": 0,
+        "withdrawable": 0,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="card"
+      >
+        <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group"
+            >
+              <label>
+                Reward Amount
+              </label>
+              <input
+                aria-describedby="emailHelp"
+                className="form-control"
+                id="reward-amount"
+                name="amount"
+                onChange={[MockFunction]}
+                placeholder="Enter Reward Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <label>
+                Withdraw Amount
+              </label>
+              <input
+                className="form-control"
+                id="withdrawable-amount"
+                name="withdrawable"
+                onChange={[MockFunction]}
+                placeholder="Enter Withdraw Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              type="submit"
+            >
+              Add Reward
+            </button>
+          </form>
+        </div>
+      </div>,
+      "className": "container col-sm-4 col-offset-3",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card-body"
+        >
+          <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group"
+            >
+              <label>
+                Reward Amount
+              </label>
+              <input
+                aria-describedby="emailHelp"
+                className="form-control"
+                id="reward-amount"
+                name="amount"
+                onChange={[MockFunction]}
+                placeholder="Enter Reward Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <label>
+                Withdraw Amount
+              </label>
+              <input
+                className="form-control"
+                id="withdrawable-amount"
+                name="withdrawable"
+                onChange={[MockFunction]}
+                placeholder="Enter Withdraw Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              type="submit"
+            >
+              Add Reward
+            </button>
+          </form>
+        </div>,
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <form
+            onSubmit={[MockFunction]}
+          >
+            <div
+              className="form-group"
+            >
+              <label>
+                Reward Amount
+              </label>
+              <input
+                aria-describedby="emailHelp"
+                className="form-control"
+                id="reward-amount"
+                name="amount"
+                onChange={[MockFunction]}
+                placeholder="Enter Reward Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <div
+              className="form-group"
+            >
+              <label>
+                Withdraw Amount
+              </label>
+              <input
+                className="form-control"
+                id="withdrawable-amount"
+                name="withdrawable"
+                onChange={[MockFunction]}
+                placeholder="Enter Withdraw Amount"
+                type="number"
+                value={0}
+              />
+            </div>
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              type="submit"
+            >
+              Add Reward
+            </button>
+          </form>,
+          "className": "card-body",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>,
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>,
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Add Reward
+              </button>,
+            ],
+            "onSubmit": [MockFunction],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label>
+                    Reward Amount
+                  </label>,
+                  <input
+                    aria-describedby="emailHelp"
+                    className="form-control"
+                    id="reward-amount"
+                    name="amount"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Reward Amount"
+                    type="number"
+                    value={0}
+                  />,
+                ],
+                "className": "form-group",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Reward Amount",
+                  },
+                  "ref": null,
+                  "rendered": "Reward Amount",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "aria-describedby": "emailHelp",
+                    "className": "form-control",
+                    "id": "reward-amount",
+                    "name": "amount",
+                    "onChange": [MockFunction],
+                    "placeholder": "Enter Reward Amount",
+                    "type": "number",
+                    "value": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <label>
+                    Withdraw Amount
+                  </label>,
+                  <input
+                    className="form-control"
+                    id="withdrawable-amount"
+                    name="withdrawable"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Withdraw Amount"
+                    type="number"
+                    value={0}
+                  />,
+                ],
+                "className": "form-group",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Withdraw Amount",
+                  },
+                  "ref": null,
+                  "rendered": "Withdraw Amount",
+                  "type": "label",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "form-control",
+                    "id": "withdrawable-amount",
+                    "name": "withdrawable",
+                    "onChange": [MockFunction],
+                    "placeholder": "Enter Withdraw Amount",
+                    "type": "number",
+                    "value": 0,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Add Reward",
+                "className": "btn btn-primary",
+                "disabled": false,
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Add Reward",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="card"
+        >
+          <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Add Reward
+              </button>
+            </form>
+          </div>
+        </div>,
+        "className": "container col-sm-4 col-offset-3",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="card-body"
+          >
+            <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Add Reward
+              </button>
+            </form>
+          </div>,
+          "className": "card",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <form
+              onSubmit={[MockFunction]}
+            >
+              <div
+                className="form-group"
+              >
+                <label>
+                  Reward Amount
+                </label>
+                <input
+                  aria-describedby="emailHelp"
+                  className="form-control"
+                  id="reward-amount"
+                  name="amount"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Reward Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <div
+                className="form-group"
+              >
+                <label>
+                  Withdraw Amount
+                </label>
+                <input
+                  className="form-control"
+                  id="withdrawable-amount"
+                  name="withdrawable"
+                  onChange={[MockFunction]}
+                  placeholder="Enter Withdraw Amount"
+                  type="number"
+                  value={0}
+                />
+              </div>
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                type="submit"
+              >
+                Add Reward
+              </button>
+            </form>,
+            "className": "card-body",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Reward Amount
+                  </label>
+                  <input
+                    aria-describedby="emailHelp"
+                    className="form-control"
+                    id="reward-amount"
+                    name="amount"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Reward Amount"
+                    type="number"
+                    value={0}
+                  />
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <label>
+                    Withdraw Amount
+                  </label>
+                  <input
+                    className="form-control"
+                    id="withdrawable-amount"
+                    name="withdrawable"
+                    onChange={[MockFunction]}
+                    placeholder="Enter Withdraw Amount"
+                    type="number"
+                    value={0}
+                  />
+                </div>,
+                <button
+                  className="btn btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Add Reward
+                </button>,
+              ],
+              "onSubmit": [MockFunction],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label>
+                      Reward Amount
+                    </label>,
+                    <input
+                      aria-describedby="emailHelp"
+                      className="form-control"
+                      id="reward-amount"
+                      name="amount"
+                      onChange={[MockFunction]}
+                      placeholder="Enter Reward Amount"
+                      type="number"
+                      value={0}
+                    />,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Reward Amount",
+                    },
+                    "ref": null,
+                    "rendered": "Reward Amount",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "aria-describedby": "emailHelp",
+                      "className": "form-control",
+                      "id": "reward-amount",
+                      "name": "amount",
+                      "onChange": [MockFunction],
+                      "placeholder": "Enter Reward Amount",
+                      "type": "number",
+                      "value": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <label>
+                      Withdraw Amount
+                    </label>,
+                    <input
+                      className="form-control"
+                      id="withdrawable-amount"
+                      name="withdrawable"
+                      onChange={[MockFunction]}
+                      placeholder="Enter Withdraw Amount"
+                      type="number"
+                      value={0}
+                    />,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Withdraw Amount",
+                    },
+                    "ref": null,
+                    "rendered": "Withdraw Amount",
+                    "type": "label",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "form-control",
+                      "id": "withdrawable-amount",
+                      "name": "withdrawable",
+                      "onChange": [MockFunction],
+                      "placeholder": "Enter Withdraw Amount",
+                      "type": "number",
+                      "value": 0,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Add Reward",
+                  "className": "btn btn-primary",
+                  "disabled": false,
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": "Add Reward",
+                "type": "button",
+              },
+            ],
+            "type": "form",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;

@@ -1,22 +1,18 @@
 import React, { Component } from "react";
 import DeployForm from "../components/DeployForm";
-import DeployInfo from "../components/deployInfo";
-import { formatDate } from "../utils/dateFormater";
-import { errorToast, successToast } from "../utils/toasts";
+import { errorToast } from "../utils/toasts";
 import {
-  deployContractAction,
-  fetchDeploymentValues
+  deployContractAction
 } from "../redux/actions/deploy";
 import { connect } from "react-redux";
 
-class Deploy extends Component {
+export class Deploy extends Component {
   state = {
     stakingCap: 0,
     stakingStart: "",
     stakingEnd: "",
     withdrawStart: "",
     withdrawEnd: "",
-    loading: false
   };
 
   handleChange = e => {
@@ -24,20 +20,9 @@ class Deploy extends Component {
     this.setState({ [name]: value });
   };
 
-  async componentDidMount() {
-    const {
-      fetchDeploymentValues,
-      contract: { data }
-    } = this.props;
-
-    if (data) {
-      await fetchDeploymentValues(data.festaking);
-    }
-  }
-
   handleSubmit = async e => {
     e.preventDefault();
-    const { deployContractAction } = this.props;
+    const { deployContractActionFunc } = this.props;
     const {
       stakingCap,
       stakingStart,
@@ -75,19 +60,7 @@ class Deploy extends Component {
       errorToast("withdrawEnds must be after withdraw starts");
       return;
     }
-    try {
-      this.setState({ loading: true });
-      await deployContractAction("normal", stakingData);
-      const {
-        fetchDeploymentValues,
-        contract: { data }
-      } = this.props;
-      await fetchDeploymentValues(data.festaking);
-      this.setState({ loading: false });
-    } catch (error) {
-      errorToast("Error in deploying");
-      this.setState({ loading: false });
-    }
+    await deployContractActionFunc(stakingData);
   };
 
   render() {
@@ -100,27 +73,9 @@ class Deploy extends Component {
       loading
     } = this.state;
 
-    const {
-      deployedCap,
-      deployedStakingStart,
-      deployedStakingEnd,
-      deployedWithdrawStart,
-      deployedWithdrawEnd
-    } = this.props.deploymentValues || {};
-
-    const { valuesLoading } = this.props;
-
     return (
-      <div className="container col-sm-10 col-offset-3 min-component-height">
-        <div className="row">
-          <DeployInfo
-            stakingCap={deployedCap}
-            stakingStart={formatDate(deployedStakingStart)}
-            stakingEnd={formatDate(deployedStakingEnd)}
-            withdrawStart={formatDate(deployedWithdrawStart)}
-            withdrawEnd={formatDate(deployedWithdrawEnd)}
-            loading={valuesLoading}
-          />
+      <div className="container min-component-height">
+
           <DeployForm
             stakingCap={stakingCap}
             stakingStart={stakingStart}
@@ -131,21 +86,16 @@ class Deploy extends Component {
             handleSubmit={this.handleSubmit}
             loading={loading}
           />
-        </div>
+
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  contract: state.contract,
-  deploymentValues: state.contract.deploymentValues,
-  valuesLoading: state.contract.valuesLoading
-});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = {
-  deployContractAction,
-  fetchDeploymentValues
+  deployContractActionFunc: deployContractAction,
 };
 
 export default connect(

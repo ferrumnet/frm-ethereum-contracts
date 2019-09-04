@@ -1,59 +1,62 @@
 import * as types from "../actions/types";
-import DeployContract from "../../utils/deployContract";
+import { connect, deploy } from "../../utils/contracts";
 import getDeploymentValues from "../../utils/deploymentValues";
 import { errorToast, successToast } from "../../utils/toasts";
+import { vars } from "./stake";
 
-const addContractSuccessfull = payload => ({
+export const addContractSuccessfull = payload => ({
   type: types.DEPLOY_CONTRACT_SUCCESSFUL,
   payload
 });
 
-const addContractFailed = payload => ({
+export const addContractFailed = payload => ({
   type: types.DEPLOY_CONTRACT_FAILED,
   payload
 });
 
-const contractLoading = payload => ({
+export const contractLoading = payload => ({
   type: types.DEPLOY_CONTRACT_LOADING,
   payload
 });
 
-const valuesLoading = payload => ({
+export const valuesLoading = payload => ({
   type: types.DEPLOYMENT_VALUES_LOADING,
   payload
 });
 
-const valuesSuccess = payload => ({
+export const valuesSuccess = payload => ({
   type: types.DEPLOYMENT_VALUES_SUCCESS,
   payload
 });
 
-const valuesError = payload => ({
+export const valuesError = payload => ({
   type: types.DEPLOYMENT_VALUES_ERROR,
   payload
 });
 
-export const deployContractAction = (
-  type = "default",
-  contractData = {}
-) => async dispatch => {
+export const deployContractAction = (data) => async dispatch => {
   dispatch(contractLoading(true));
   try {
-    if (type !== "default") {
-      let data = await DeployContract(type, contractData);
-      successToast("contract deployed");
-      dispatch(addContractSuccessfull(data));
-    } else {
-      let data = await DeployContract();
-      successToast("contract deployed");
-      dispatch(addContractSuccessfull(data));
-    }
-
-    dispatch(contractLoading(false));
+    const res = await deploy(data);
+    successToast("contract deployed");
+    await dispatch(fetchDeploymentValues(res.festaking))
+    dispatch(addContractSuccessfull(res));
   } catch (error) {
     errorToast("Unable to deploy contract ");
     dispatch(addContractFailed(error));
-    dispatch(contractLoading(false));
+  }
+};
+
+export const connectContractAction = address => async dispatch => {
+  dispatch(contractLoading(true));
+  try {
+    let data = await connect(address);
+    await dispatch(vars(data));
+    successToast("contract connected");
+    dispatch(addContractSuccessfull(data));
+  } catch (error) {
+    errorToast("Unable to connect contract ");
+    dispatch(addContractFailed(error));
   }
 };
 
@@ -63,7 +66,6 @@ export const fetchDeploymentValues = festaking => async dispatch => {
     dispatch(valuesSuccess(data));
   } catch (error) {
     errorToast("Unable to get deployment values");
-    console.log(error, "deployment values error");
     dispatch(valuesError(error));
     dispatch(valuesLoading(false));
   }
