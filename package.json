@@ -13,7 +13,7 @@
     "truffle": "^5.0.31",
     "truffle-hdwallet-provider": "^1.0.15",
     "truffle-security": "^1.5.3",
-    "openzeppelin-solidity": "^2.3.0",
+    "openzeppelin-solidity": "^2.3.0"
   },
   "dependencies": {
     "abi-decoder": "^2.2.0",

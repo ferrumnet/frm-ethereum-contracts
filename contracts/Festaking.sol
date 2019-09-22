@@ -199,7 +199,6 @@ contract Festaking {
         // Request to transfer amount from the contract to receiver.
         // contract does not own the funds, so the allower must have added allowance to the contract
         // Allower is the original owner.
-        address payer = address(this);
         ERC20Interface = ERC20(tokenAddress);
         return ERC20Interface.transferFrom(allower, receiver, amount);
     }

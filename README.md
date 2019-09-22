@@ -73,3 +73,11 @@ withdrawStarts = stakingEnds + 3 months
 withdrawEnds = withdrawStarts + 3 months + 1 second
 ```
 
+
+## How to add contract to Etherscan.io
+
+1. Paste the flatenned contract ABI JSON (from `dist` folder) to REMIX
+2. Compile and deploy the contract (using REMIX or the dashboard). Take an exact note of the constructor arguments.
+3. Go to `https://abi.hashex.org/#`, paste the ABI JSON, and fill up constructor arguments to get the ABI encoded data
+4. In Etherscan, on the contract tab, select `add source and verify`. Then paste the flattened contract code, and ABI encoded constructor data obtaied at step 3.
+
