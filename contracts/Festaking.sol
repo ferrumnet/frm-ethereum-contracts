@@ -67,6 +67,7 @@ contract Festaking {
     function addReward(uint256 rewardAmount, uint256 withdrawableAmount)
     public
     _before(withdrawStarts)
+    _hasAllowance(msg.sender, rewardAmount)
     returns (bool) {
         require(rewardAmount > 0, "Festaking: reward must be positive");
         require(withdrawableAmount >= 0, "Festaking: withdrawable amount cannot be negative");
@@ -153,13 +154,17 @@ contract Festaking {
     _after(stakingStarts)
     _before(stakingEnds)
     _positive(amount)
+    _hasAllowance(staker, amount)
     returns (bool) {
         // check the remaining amount to be staked
         uint256 remaining = amount;
         if (remaining > (stakingCap.sub(stakedBalance))) {
             remaining = stakingCap.sub(stakedBalance);
         }
-        require(remaining > 0, "Staking cap is filled");
+        require(remaining > 0, "Festaking: Staking cap is filled");
+        // The next require is not necessary, because it will never happen, but won't hurt to double check
+        // this is because stakedTotal and stakedBalance are only modified in this method during the staking period
+        require((remaining + stakedTotal) <= stakingCap, "Festaking: this will increase staking amount pass the cap");
         if (!_payMe(staker, remaining)) {
             return false;
         }
@@ -171,9 +176,11 @@ contract Festaking {
         _stakes[staker] = _stakes[staker].add(remaining);
 
         if (remaining < amount) {
-            // Return the unstaked amount to sender
+            // Return the unstaked amount to sender (from allowance)
             uint256 refund = amount.sub(remaining);
-            _payTo(staker, address(this), staker, refund);
+            if (!_payTo(staker, staker, refund)) {
+                return false;
+            }
             emit Refunded(tokenAddress, staker, refund);
         }
         return true;
@@ -182,16 +189,18 @@ contract Festaking {
     function _payMe(address payer, uint256 amount)
     private
     returns (bool) {
-        return _payTo(payer, address(this), address(this), amount);
+        return _payTo(payer, address(this), amount);
     }
 
-    function _payTo(address allower, address payer, address receiver, uint256 amount)
+    function _payTo(address allower, address receiver, uint256 amount)
+    _hasAllowance(allower, amount)
     private
     returns (bool) {
-        // Request to transfer amount from payer to receiver. Allower is the original owner.
+        // Request to transfer amount from the contract to receiver.
+        // contract does not own the funds, so the allower must have added allowance to the contract
+        // Allower is the original owner.
+        address payer = address(this);
         ERC20Interface = ERC20(tokenAddress);
-        uint256 ourAllowance = ERC20Interface.allowance(allower, payer);
-        require(amount <= ourAllowance, "Make sure to add enough allowance");
         return ERC20Interface.transferFrom(allower, receiver, amount);
     }
 
@@ -220,6 +229,14 @@ contract Festaking {
 
     modifier _before(uint eventTime) {
         require(now < eventTime, "Festaking: bad timing for the request");
+        _;
+    }
+
+    modifier _hasAllowance(address allower, uint256 amount) {
+        // Make sure the allower has provided the right allowance.
+        ERC20Interface = ERC20(tokenAddress);
+        uint256 ourAllowance = ERC20Interface.allowance(allower, address(this));
+        require(amount <= ourAllowance, "Festaking: Make sure to add enough allowance");
         _;
     }
 }

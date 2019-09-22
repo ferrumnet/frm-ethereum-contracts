@@ -42,12 +42,9 @@ beforeEach(async () => {
 });
 
 async function allow(addr, amount) {
-    console.log('Transferring');
     await frm.methods.transfer(addr, amount).send({from: owner, gas: GAS});
-    console.log('Approving');
     await frm.methods.approve(contractAddress, amount).send({from: addr});
     const allowance = await frm.methods.allowance(addr, contractAddress).call();
-    console.log('Approved ', allowance.toString());
     assert(allowance.toString() === amount.toString(), 'Allowance didn\'nt happen');
 }
 
@@ -86,18 +83,17 @@ async function setUpStakes() {
     const tx = await festaking.methods.stake(100).send({from: ac1, gas: GAS});
     await getTransactionLogs(tx.transactionHash);
     let stake = await festaking.methods.stakeOf(ac1).call();
-    console.log('Staked ', stake.toString());
 
     await festaking.methods.stake(100).send({from: ac1, gas: GAS});
     stake = await festaking.methods.stakeOf(ac1).call();
-    console.log('Staked ', stake.toString());
+    console.log('ac1 staked ', stake);
 
     await allow(ac2, 1000);
     await festaking.methods.stake(1000).send({from: ac2, gas: GAS});
     stake = await festaking.methods.stakeOf(ac2).call();
-    console.log('Staked ', stake.toString());
     const allowance = await frm.methods.allowance(ac2, contractAddress).call();
-    console.log('Allowance after stake overflow ', allowance.toString());
+    console.log('ac2 staked ', stake, ' and has allowance of ', allowance, ' it tried to stake 1000 ' +
+        'but cap was full and 200 goes back to account');
 }
 
 async function getTransactionLogs(txId) {
@@ -107,25 +103,25 @@ async function getTransactionLogs(txId) {
         if (l) {
             console.log(JSON.stringify(l));
         }
-    })
+    });
     return decodedLogs.filter(Boolean);
 }
 
 describe('Happy Festaking', () => {
     it('Sets the reward', async () => {
         const totalRewBefore = await festaking.methods.totalReward().call();
-        console.log('Total reward before add', totalRewBefore.toString());
+        assert.deepStrictEqual(totalRewBefore, '0');
         await festaking.methods.addReward(100, 10).send({from: owner, gas: GAS});
         let totalRewAfter = await festaking.methods.totalReward().call();
-        console.log('Total reward after add', totalRewAfter.toString());
+        assert.deepStrictEqual(totalRewAfter, '100');
         let earlyWithdrawReward = await festaking.methods.earlyWithdrawReward().call();
-        console.log('earlyWithdrawReward reward after add', earlyWithdrawReward.toString());
+        assert.deepStrictEqual(earlyWithdrawReward, '10');
 
         await festaking.methods.addReward(50, 40).send({from: owner, gas: GAS});
         totalRewAfter = await festaking.methods.totalReward().call();
-        console.log('Total reward after add', totalRewAfter.toString());
+        assert.deepStrictEqual(totalRewAfter, '150');
         earlyWithdrawReward = await festaking.methods.earlyWithdrawReward().call();
-        console.log('earlyWithdrawReward reward after add', earlyWithdrawReward.toString());
+        assert.deepStrictEqual(earlyWithdrawReward, '50');
     });
 
     it('Withdraw right after it opens gives no reward', async function() {
@@ -136,54 +132,89 @@ describe('Happy Festaking', () => {
         await festaking.methods.setEarlyWithdrawalPeriod(0).send({from: owner, gas: GAS});
 
         const before = await vars();
-        console.log('BEFORE', before);
-        console.log(await balance(ac2));
+        assert.deepStrictEqual(before, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '1000',
+            stakedBalance: '1000',
+        });
+        const balanceBefore = await balance(ac2);
+        assert.deepStrictEqual(balanceBefore, '200');
 
         // Withdraw at the first moment
         const tx = await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
         await getTransactionLogs(tx.transactionHash);
         let after = await vars();
-        console.log('AFTER', after);
+        assert.deepStrictEqual(after, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '1000',
+            stakedBalance: '600',
+        });
         let bal = await balance(ac2);
-        console.log(bal);
+        assert.deepStrictEqual(bal, '600');
     });
 
     it('Withdraw halfway before it ends', async function () {
         this.timeout(0);
         await setUpStakes();
 
-        // Now moving to the first moment of withdawal phase
+        // Now moving to the half way of withdawal phase
         await festaking.methods.setEarlyWithdrawalPeriod(30000).send({from: owner, gas: GAS});
 
         const before = await vars();
-        console.log('BEFORE', before);
-        console.log(await balance(ac2));
+        assert.deepStrictEqual(before, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '1000',
+            stakedBalance: '1000',
+        });
 
-        // Withdraw at the first moment
         await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
         let after = await vars();
-        console.log('AFTER', after);
         let bal = await balance(ac2);
-        console.log(bal);
+        assert.deepStrictEqual(after, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '900',
+            stakedBalance: '600',
+        });
+        assert.deepStrictEqual(bal, '700');
     });
 
     it('Withdraw right before close', async function() {
         this.timeout(0);
         await setUpStakes();
 
-        // Now moving to the first moment of withdawal phase
+        // Now moving to the end of withdawal phase
         await festaking.methods.setEarlyWithdrawalPeriod(59990).send({from: owner, gas: GAS});
 
         const before = await vars();
-        console.log('BEFORE', before);
-        console.log(await balance(ac2));
+        const balanceBefore = await balance(ac2);
+        assert.deepStrictEqual(before, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '1000',
+            stakedBalance: '1000',
+        });
+        assert.deepStrictEqual(balanceBefore, '200');
 
-        // Withdraw at the first moment
         await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
         let after = await vars();
-        console.log('AFTER', after);
         let bal = await balance(ac2);
-        console.log(bal);
+        assert.deepStrictEqual(after, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '801',
+            stakedBalance: '600',
+        });
+        assert.deepStrictEqual(bal, '799');
 
         // Now continue after close
         await festaking.methods.setEarlyWithdrawalPeriod(60000).send({from: owner, gas: GAS});
@@ -191,42 +222,122 @@ describe('Happy Festaking', () => {
         // Withdraw another 400
         await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
         after = await vars();
-        console.log('AFTER', after);
-        console.log('Expected balance', 801 * 400 / 600 + 400 + 799);
         bal = await balance(ac2);
-        console.log(bal);
+        // After close reward and stake balance don't change
+        assert.deepStrictEqual(after, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '801',
+            stakedBalance: '600',
+        });
+        // Here ac2 expects ~ 66% of the remaining reward
+        // because my balance at the time is ~ 66% of the remaining balance
+        assert.deepStrictEqual(bal, (801 * 400 / 600 + 400 + 799).toString());
+
         let stakes = await festaking.methods.stakeOf(ac2).call();
-        console.log('Remaining stake', stakes);
-        // Here I expect 80% of the remaining reward because my balance at the time is 80% of the remaining balance
+        assert.deepStrictEqual(stakes, '0');
 
         // Withdraw ac1
         await festaking.methods.withdraw(200).send({from: ac1, gas: GAS});
         bal = await balance(ac1);
-        console.log(bal);
+        assert.deepStrictEqual(bal, (801 * 200 / 600 + 200).toString());
         stakes = await festaking.methods.stakeOf(ac1).call();
-        console.log('Remaining stake', stakes);
-        // Here I expect remaining 20% of the reward because my balance at the time withdraw was finished,
-        // was 20% of the remaining balance
+        assert.deepStrictEqual(stakes, '0'); // Remaining stakes is zero
     });
 
     it('Withdraw after close', async function() {
         this.timeout(0);
         await setUpStakes();
 
-        // Now moving to the first moment of withdawal phase
+        // Now moving to the first moment after maturity
         await festaking.methods.setEarlyWithdrawalPeriod(60000).send({from: owner, gas: GAS});
 
         const before = await vars();
-        console.log('BEFORE', before);
-        console.log(await balance(ac2));
+        const balanceBefore = await balance(ac2);
+        assert.deepStrictEqual(before, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '1000',
+            stakedBalance: '1000',
+        });
+        assert.deepStrictEqual(balanceBefore, '200');
 
-        // Withdraw at the first moment
         await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
         let after = await vars();
-        console.log('AFTER', after);
         let bal = await balance(ac2);
-        console.log(bal);
+        assert.deepStrictEqual(after, {
+            stakedTotal: '1000',
+            totalReward: '1000',
+            earlyWithdrawReward: '500',
+            rewardBalance: '1000',
+            stakedBalance: '1000',
+        });
+        assert.deepStrictEqual(bal, (400 + 400 + 200).toString()); // reward + amount + existing balance
     });
+
+    it('annual rate calculation', async function() {
+        this.timeout(0);
+        await setUpStakes();
+
+        // Caldulate the withdraw reward rate.
+        // wRate = withdrawReward/stakingCap
+        // dT = withdrawEnd - stakingEnd // milliseconds
+        // yearMs = 365 * 24 * 3600 * 1000
+        // earlyWdRewardAnualRate = wRate * yearMs / dT
+        const { stakedTotal, earlyWithdrawReward } = await vars();
+        const dT = 60000;
+        const yearMs = 265 * 24 * 3600 * 1000;
+        const wRate = Number(earlyWithdrawReward) / Number(stakedTotal);
+        const earlyWdRewardAnualRate = wRate * yearMs / dT;
+
+        // Now do an actual withdraw and see if the reward matches expectation
+        const withdrawTime = dT / 2;
+        await festaking.methods.setEarlyWithdrawalPeriod(withdrawTime).send({from: owner, gas: GAS});
+        let preBal = await balance(ac2);
+        await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
+        const withdrawed = await balance(ac2) - preBal;
+        const reward = withdrawed - 400;
+
+        console.log('Amount withdrawn:', withdrawed, ' reward', reward);
+        assert.deepStrictEqual(wRate * withdrawTime / dT,reward / 400);
+        const actualAnnualRate = reward / 400 * (yearMs / withdrawTime);
+        console.log('Actual annual rate:', actualAnnualRate, ' vs ', earlyWdRewardAnualRate);
+        assert.deepStrictEqual(actualAnnualRate,earlyWdRewardAnualRate);
+    });
+
+    it('maximum rate calculation', async function() {
+        this.timeout(0);
+        await setUpStakes();
+        const { stakedTotal, totalReward } = await vars();
+        const dT = 60000;
+        const yearMs = 265 * 24 * 3600 * 1000;
+        const annualize = r => r * yearMs / dT;
+
+        // Reward at maturity will be translated to annual rate at follows:
+        // Minimum reward at maturity is when no early withdrawal happens, hense:
+        // minRewardRateAtMat = annualize( totalReward / stakedTotal )
+        // maxRewardAtMat = totalReward
+        const minRewardRateAtMat = totalReward / stakedTotal;
+        const annualizedMinRewardRateAtMat = annualize( minRewardRateAtMat );
+
+        // Now do an actual withdraw and see if the reward matches expectation
+        const withdrawTime = dT + 1;
+        await festaking.methods.setEarlyWithdrawalPeriod(withdrawTime).send({from: owner, gas: GAS});
+        let preBal = await balance(ac2);
+        await festaking.methods.withdraw(400).send({from: ac2, gas: GAS});
+        const withdrawed = await balance(ac2) - preBal;
+        const reward = withdrawed - 400;
+
+        console.log('Amount withdrawn:', withdrawed, ' reward', reward);
+        assert.deepStrictEqual(minRewardRateAtMat,reward / 400);
+        const actualAnnualRate = reward / 400 * (yearMs / dT);
+        console.log('Actual annual rate:', actualAnnualRate, ' vs ', annualizedMinRewardRateAtMat);
+        assert.deepStrictEqual(actualAnnualRate, annualizedMinRewardRateAtMat);
+    });
+
+    it('stake more than cap', () => {});
 
     it('withdraw more than balance', () => {});
 
