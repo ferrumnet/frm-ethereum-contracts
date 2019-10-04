@@ -31,7 +31,7 @@ Write which parts of the code you can improve. Write a short and to the point cr
 
 ## 3. Find the bug
 
-Look at the code very carefully, you can install it on a test environment (or testnet) and run it. See if you can spot bugs leading to potential missuse of the funds or people loosing money. Review solidity security best practices to find potential candidates
+Look at the code very carefully, you can install it on a test environment (or testnet) and run it. See if you can spot bugs leading to potential missuse of the funds or people losing money. Review solidity security best practices to find potential candidates.
 
 ## 4. Add feature
 
