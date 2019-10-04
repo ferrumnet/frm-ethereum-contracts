@@ -1,9 +1,9 @@
 # Smart Contract Challenge
 
-The following challenge is designed to asses your ability of understanding of solidity, and smart contracts in the Ethereum ecosystem. Please follow the instructions carefully. You can submit the tasks to our (https://t.me/Ferrumdeveloper)[dev telegram channel].
+The following challenge is designed to asses your ability of understanding of solidity, and smart contracts in the Ethereum ecosystem. Please follow the instructions carefully. You can submit the tasks to our [dev telegram channel](https://t.me/Ferrumdeveloper).
 
 Contract code: 
-(https://github.com/ferrumnet/frm-ethereum-contracts/blob/master/contracts/Festaking.sol)(https://github.com/ferrumnet/frm-ethereum-contracts/blob/master/contracts/Festaking.sol)
+[https://github.com/ferrumnet/frm-ethereum-contracts/blob/master/contracts/Festaking.sol](https://github.com/ferrumnet/frm-ethereum-contracts/blob/master/contracts/Festaking.sol)
 
 ## 1. Read the contract above, and answer the following questions:
 
