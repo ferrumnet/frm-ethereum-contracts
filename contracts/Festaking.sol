@@ -59,11 +59,6 @@ contract Festaking {
         stakingCap = stakingCap_;
     }
 
-    function registerTokenForTest(address token) public returns (bool) {
-        tokenAddress = token;
-        return true;
-    }
-
     function addReward(uint256 rewardAmount, uint256 withdrawableAmount)
     public
     _before(withdrawStarts)
