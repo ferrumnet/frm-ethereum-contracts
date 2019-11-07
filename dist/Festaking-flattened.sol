@@ -480,11 +480,6 @@ contract Festaking {
         stakingCap = stakingCap_;
     }
 
-    function registerTokenForTest(address token) public returns (bool) {
-        tokenAddress = token;
-        return true;
-    }
-
     function addReward(uint256 rewardAmount, uint256 withdrawableAmount)
     public
     _before(withdrawStarts)
@@ -553,8 +548,9 @@ contract Festaking {
         _stakes[from] = _stakes[from].sub(amount);
         if (_payDirect(from, payOut)) {
             emit PaidOut(tokenAddress, from, amount, reward);
+            return true;
         }
-        return true;
+        return false;
     }
 
     function _withdrawAfterClose(address from, uint256 amount)
@@ -566,8 +562,9 @@ contract Festaking {
         _stakes[from] = _stakes[from].sub(amount);
         if (_payDirect(from, payOut)) {
             emit PaidOut(tokenAddress, from, amount, reward);
+            return true;
         }
-        return true;
+        return false;
     }
 
     function _stake(address staker, uint256 amount)
@@ -582,28 +579,27 @@ contract Festaking {
         if (remaining > (stakingCap.sub(stakedBalance))) {
             remaining = stakingCap.sub(stakedBalance);
         }
-        require(remaining > 0, "Festaking: Staking cap is filled");
-        // The next require is not necessary, because it will never happen, but won't hurt to double check
+        // These requires are not necessary, because it will never happen, but won't hurt to double check
         // this is because stakedTotal and stakedBalance are only modified in this method during the staking period
+        require(remaining > 0, "Festaking: Staking cap is filled");
         require((remaining + stakedTotal) <= stakingCap, "Festaking: this will increase staking amount pass the cap");
         if (!_payMe(staker, remaining)) {
             return false;
         }
         emit Staked(tokenAddress, staker, amount, remaining);
 
+        if (remaining < amount) {
+            // Return the unstaked amount to sender (from allowance)
+            uint256 refund = amount.sub(remaining);
+            if (_payTo(staker, staker, refund)) {
+                emit Refunded(tokenAddress, staker, refund);
+            }
+        }
+
         // Transfer is completed
         stakedBalance = stakedBalance.add(remaining);
         stakedTotal = stakedTotal.add(remaining);
         _stakes[staker] = _stakes[staker].add(remaining);
-
-        if (remaining < amount) {
-            // Return the unstaked amount to sender (from allowance)
-            uint256 refund = amount.sub(remaining);
-            if (!_payTo(staker, staker, refund)) {
-                return false;
-            }
-            emit Refunded(tokenAddress, staker, refund);
-        }
         return true;
     }
 
