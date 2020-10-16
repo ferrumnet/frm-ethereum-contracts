@@ -770,7 +770,7 @@ pragma solidity ^0.6.2;
 
 
 contract FerrumXToken is ERC20, ERC20Burnable {
-    constructor() ERC20("Ferrum X Token", "FRMX") public {
+    constructor() ERC20("FRMx Token", "FRMX") public {
         _mint(msg.sender, 33000 * 10 ** 18);
     }
 }
