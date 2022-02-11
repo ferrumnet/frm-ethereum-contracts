@@ -15,7 +15,7 @@
     "truffle-security": "^1.5.3"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^3.2.0",
+    "@openzeppelin/contracts": "^4.4.2",
     "abi-decoder": "^2.2.0",
     "truffle-flattener": "^1.5.0",
     "web3": "^1.2.1"
