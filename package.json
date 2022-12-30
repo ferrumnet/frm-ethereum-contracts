@@ -9,7 +9,7 @@
   "license": "MIT",
   "devDependencies": {
     "ganache-cli": "^6.5.1",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "truffle": "^5.0.31",
     "truffle-hdwallet-provider": "^1.0.15",
     "truffle-security": "^1.5.3"
